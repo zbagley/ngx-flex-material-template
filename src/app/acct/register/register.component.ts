@@ -32,13 +32,8 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  emailRegistrant() {
-  }
-
-  addRegistrant() {
-  }
-
   register() {
+    this.router.navigate(['/acct/login']);
   }
 
   setClassUsername() {

@@ -1,13 +1,21 @@
 <div fxFlexFill fxLayout="column" class="full-height" fxLayoutAlign="center center">
 	<div fxFlex=10 class="full-width pad-sides">
-		<nav md-tab-nav-bar>
+		<nav md-tab-nav-bar *ngIf="!acctService.isLoggedIn()">
 			<a md-tab-link active="true"><md-icon class="home-icon">home</md-icon></a>
 			<a md-tab-link [routerLink]="['/acct/login']">Login</a>
 			<a md-tab-link [routerLink]="['/acct/register']">Register</a>
 		</nav>
+		<nav md-tab-nav-bar *ngIf="acctService.isLoggedIn()">
+			<a title="View current item." md-tab-link active="true"><md-icon class="home-icon">home</md-icon></a>
+			<a title="Create new item." md-tab-link [routerLink]="['/home']"><md-icon color="accent" class="home-icon">add_circle</md-icon></a>
+			<a md-tab-link [routerLink]="['/home']">Page 1</a>
+			<a md-tab-link [routerLink]="['/home']">Page 2</a>
+			<a md-tab-link [routerLink]="['/home']">Page 3</a>
+		</nav>
 	</div>
 	<div fxFlex=90 fxLayout="column" class="pad-sides text-center">
-		<h1 fxFlex="50px">Home - Welcome!</h1>
+		<h1 fxFlex="50px" *ngIf="!acctService.isLoggedIn()">Default Landing Page - Welcome!</h1>
+		<h1 fxFlex="50px" *ngIf="acctService.isLoggedIn()">Welcome, {{ acctService.username }}</h1>
 		<p fxFlex>
 			Spicy jalapeno bacon ipsum dolor amet leberkas incididunt aliqua dolor flank pariatur jowl pastrami. Bacon turkey magna eiusmod dolore enim venison filet mignon. Labore drumstick tempor ribeye strip steak, duis culpa capicola picanha est meatloaf shoulder ut mollit. Aliqua esse salami drumstick dolore ut exercitation do elit proident tenderloin pancetta in. Tempor aliqua minim swine, fugiat shoulder beef ribs meatball.
 			<br><br>

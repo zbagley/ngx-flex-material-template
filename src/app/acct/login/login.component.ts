@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { AcctService } from '../../services/acct/acct.service';
 
 @Component({
   selector: 'app-login',
@@ -9,19 +10,14 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  registerForm: FormGroup;
-  username = new FormControl('', [Validators.required,
-                                  Validators.minLength(2),
-                                  Validators.maxLength(30),
-                                  Validators.pattern('[a-zA-Z0-9_-\\s]*')]);
   email = new FormControl('', [Validators.required,
                                        Validators.minLength(3),
                                        Validators.maxLength(100)]);
   password = new FormControl('', [Validators.required,
                                           Validators.minLength(6)]);
-  accounttype = new FormControl('', [Validators.required]);
 
   constructor(
+    private acctService: AcctService,
     private formBuilder: FormBuilder,
     private router: Router) { }
 
@@ -30,33 +26,13 @@ export class LoginComponent implements OnInit {
       email: this.email,
       password: this.password
     });
-    this.registerForm = this.formBuilder.group({
-      username: this.username,
-      email: this.email,
-      password: this.password,
-      accounttype: this.accounttype
-    });
-  }
-
-  homeClick() {
-    this.router.navigate(['/home']);
   }
 
   login() {
+    this.acctService.login();
+    this.router.navigate(['/home']);
   }
 
-  emailRegistrant() {
-  }
-
-  addRegistrant() {
-  }
-
-  register() {
-  }
-
-  setClassUsername() {
-    return { 'has-danger': !this.username.pristine && !this.username.valid };
-  }
   setClassEmail() {
     return { 'has-danger': !this.email.pristine && !this.email.valid };
   }

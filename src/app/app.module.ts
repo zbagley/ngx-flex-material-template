@@ -12,6 +12,9 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
+import { AcctService } from './services/acct/acct.service';
+import { LoggedInGuard } from './guards/logged-in.guard';
+import { LoggedOutGuard } from './guards/logged-out.guard';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,7 @@ import { HomeComponent } from './home/home.component';
     HttpModule,
     RoutingModule
   ],
-  providers: [],
+  providers: [AcctService, LoggedInGuard, LoggedOutGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
