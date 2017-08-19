@@ -1,12 +1,12 @@
 <div fxFlexFill fxLayout="column" class="full-height" fxLayoutAlign="center center">
 	<div fxFlex=10 class="full-width pad-sides">
 		<nav md-tab-nav-bar *ngIf="!acctService.isLoggedIn()">
-			<a md-tab-link active="true"><md-icon class="home-icon">home</md-icon></a>
+			<a md-tab-link active="true"><i class="fa fa-line-chart fa-lg"></i></a>
 			<a md-tab-link [routerLink]="['/acct/login']">Login</a>
 			<a md-tab-link [routerLink]="['/acct/register']">Register</a>
 		</nav>
 		<nav md-tab-nav-bar *ngIf="acctService.isLoggedIn()">
-			<a title="View current item." md-tab-link active="true"><md-icon class="home-icon">home</md-icon></a>
+			<a title="View current item." md-tab-link active="true"><i class="fa fa-line-chart fa-lg"></i></a>
 			<a title="Create new item." md-tab-link [routerLink]="['/home']"><md-icon color="accent" class="home-icon">add_circle</md-icon></a>
 			<a md-tab-link [routerLink]="['/home']">Page 1</a>
 			<a md-tab-link [routerLink]="['/home']">Page 2</a>

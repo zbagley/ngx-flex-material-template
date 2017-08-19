@@ -1,17 +1,17 @@
 <div fxFlexFill fxLayout="column" class="padded" fxLayoutGap="15px">
 	<div fxFlex=30>
-		<button fxFlexFill md-raised-button color="primary" [routerLink]="['/options/1']">
-			Option 1
+		<button fxFlexFill md-raised-button [color]="getColorForRoute('home')" [routerLink]="['/home']">
+			<i class="fa fa-line-chart fa-lg pad-bot"></i><br>Home
 		</button>
 	</div>
 	<div fxFlex=30>
-		<button fxFlexFill md-raised-button color="primary" [routerLink]="['/options/2']">
-			Option 2
+		<button fxFlexFill md-raised-button [color]="getColorForRoute('option2')" [routerLink]="['/option2']">
+			<i class="fa fa-pencil fa-lg pad-bot"></i><br>Option 2
 		</button>
 	</div>
 	<div fxFlex=30>
-		<button fxFlexFill md-raised-button color="primary" [routerLink]="['/options/3']">
-			Option 3
+		<button fxFlexFill md-raised-button [color]="getColorForRoute('option3')" [routerLink]="['/option3']">
+			<i class="fa fa-database fa-lg pad-bot"></i><br>Option 3
 		</button>
 	</div>
 </div>

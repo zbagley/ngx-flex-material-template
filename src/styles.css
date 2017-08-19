@@ -36,6 +36,10 @@ html, body {
 	padding-left: 1.5em;
 }
 
+.pad-bot {
+    padding-bottom: 0.5em;
+}
+
 .circle {
 	position: relative;
 	z-index: 5000;

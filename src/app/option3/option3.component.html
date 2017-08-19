@@ -1,0 +1,27 @@
+<div fxFlexFill fxLayout="column" class="full-height" fxLayoutAlign="center center">
+	<div fxFlex=10 class="full-width pad-sides">
+		<nav md-tab-nav-bar *ngIf="!acctService.isLoggedIn()">
+			<a md-tab-link active="true"><i class="fa fa-database fa-lg"></i></a>
+			<a md-tab-link [routerLink]="['/acct/login']">Login</a>
+			<a md-tab-link [routerLink]="['/acct/register']">Register</a>
+		</nav>
+		<nav md-tab-nav-bar *ngIf="acctService.isLoggedIn()">
+			<a title="View current item." md-tab-link active="true"><i class="fa fa-database fa-lg"></i></a>
+			<a title="Create new item." md-tab-link [routerLink]="['/option3']"><md-icon color="accent" class="option3-icon">add_circle</md-icon></a>
+			<a md-tab-link [routerLink]="['/option3']">Page 1</a>
+			<a md-tab-link [routerLink]="['/option3']">Page 2</a>
+			<a md-tab-link [routerLink]="['/option3']">Page 3</a>
+		</nav>
+	</div>
+	<div fxFlex=90 fxLayout="column" class="pad-sides text-center">
+		<h1 fxFlex="50px" *ngIf="!acctService.isLoggedIn()">Default Option 3!</h1>
+		<h1 fxFlex="50px" *ngIf="acctService.isLoggedIn()">Welcome to Option 3, {{ acctService.username }}!</h1>
+		<p fxFlex>
+			Spicy jalapeno bacon ipsum dolor amet leberkas incididunt aliqua dolor flank pariatur jowl pastrami. Bacon turkey magna eiusmod dolore enim venison filet mignon. Labore drumstick tempor ribeye strip steak, duis culpa capicola picanha est meatloaf shoulder ut mollit. Aliqua esse salami drumstick dolore ut exercitation do elit proident tenderloin pancetta in. Tempor aliqua minim swine, fugiat shoulder beef ribs meatball.
+			<br><br>
+			Cupidatat tail irure, enim cupim bacon venison dolor meatball officia mollit pork loin. Exercitation sausage ribeye occaecat. Drumstick aute chicken magna aliqua, jowl velit beef ribs lorem ullamco flank ad et sunt. Doner magna sirloin, porchetta t-bone pork loin sed cow in pancetta ground round pariatur dolore. Turkey dolore excepteur tail cow, pork chop ut aliqua kevin.
+			<br><br>
+			Commodo bresaola meatloaf ground round. Rump ribeye jowl reprehenderit qui anim brisket filet mignon hamburger shank picanha cupidatat kevin. In consectetur ipsum voluptate qui, pork pastrami alcatra boudin aute. Kevin short ribs spare ribs, swine culpa consequat sirloin shoulder frankfurter short loin adipisicing tenderloin. Eu lorem brisket anim alcatra corned beef, cow capicola.
+		</p>
+	</div>
+</div>

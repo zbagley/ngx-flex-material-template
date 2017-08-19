@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AcctService } from '../services/acct/acct.service';
 
 @Component({
   selector: 'app-option3',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Option3Component implements OnInit {
 
-  constructor() { }
+  constructor(private acctService: AcctService) { }
 
   ngOnInit() {
   }
