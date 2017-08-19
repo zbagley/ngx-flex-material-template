@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'acct', loadChildren: './acct/acct.module#AcctModule' },
+  { path: 'options', loadChildren: './options/options.module#OptionsModule' },
   { path: '404', component: PageNotFoundComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/404' }

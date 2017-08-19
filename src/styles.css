@@ -69,4 +69,5 @@ html, body {
          -o-transition: all 0.25s linear;
             transition: all 0.25s linear;
 	filter: brightness(85%);
+    color: rgba(0,0,0,0.4);
 }
