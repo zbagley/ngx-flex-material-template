@@ -1,1 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	font-family: 'Saira Semi Condensed', sans-serif;
+}
+
+.overflow {
+	overflow-y: auto;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.full-height {
+	height: 100%;
+}
+
+.width-80 {
+	width: 80%;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.btn-reg {
+	max-width: 400px;
+}
+
+.pad-sides {
+	padding-right: 1.5em;
+	padding-left: 1.5em;
+}
+
+.circle {
+	position: relative;
+	z-index: 5000;
+	top: calc(50% - 1.5em);
+	left: calc(100% - 1.5em);
+    width: 3em;
+    height: 3em;
+    border-radius: 1.5em;
+    background-color: lightblue;
+    text-align: center;
+    -webkit-transition: all 0.5s linear;
+       -moz-transition: all 0.5s linear;
+        -ms-transition: all 0.5s linear;
+         -o-transition: all 0.5s linear;
+            transition: all 0.5s linear;
+}
+.circle .mat-icon {
+    line-height: 1.5em;
+    font-size: 2em;
+    height: 1.5em;
+    width: 1.5em;
+    font-weight: 400;
+}
+
+/* clickable hover animations (raised buttons/non-material) */
+.mat-accent:hover, .mat-primary:hover, .mat-warn:hover, .clickable:hover {
+	cursor: pointer;
+    -webkit-transition: all 0.25s linear;
+       -moz-transition: all 0.25s linear;
+        -ms-transition: all 0.25s linear;
+         -o-transition: all 0.25s linear;
+            transition: all 0.25s linear;
+	filter: brightness(85%);
+}

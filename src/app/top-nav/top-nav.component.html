@@ -1,0 +1,16 @@
+<div fxFlex=100 fxLayout="row" class="top-nav">
+  <div fxFlex=50 fxLayoutAlign="start center">
+    <img src="/assets/ms-icon-310x310.png" class="clickable" (click)="homeClick();">
+    <h1 class="clickable" (click)="homeClick();">DSLimited</h1>
+  </div>
+  <div fxFlex=50 fxLayoutAlign="end center" *ngIf="true">
+    <button md-button (click)="acctClick();"><u>Login / Register</u></button>
+  </div>
+  <div fxFlex=50 fxLayoutAlign="end center" *ngIf="false">
+    <button md-button [mdMenuTriggerFor]="menu"><md-icon>account_circle</md-icon><u>{{ authService.currentUser.username }}</u></button>
+    <md-menu #menu="mdMenu" [overlapTrigger]="false">
+    	<button md-menu-item [routerLink]="['/acct/myaccount']">Settings</button>
+    	<button md-menu-item (click)="authService.logout();acctClick();">Logout</button>
+    </md-menu>
+  </div>
+</div>

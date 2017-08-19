@@ -1,0 +1,16 @@
+.top-nav {
+	background-color: lightblue;
+}
+img {
+	margin: 5px 5px 5px 15px;
+	max-height: 90%;
+	width: 40px;
+}
+button {
+	height: 100%;
+	font-size: 1.5em;
+	font-weight: 500;
+}
+.clickable:hover {
+	color: rgba(0,0,0,0.4);
+}

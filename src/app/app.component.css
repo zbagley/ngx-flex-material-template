@@ -1,0 +1,25 @@
+.circle-closed {
+	left: -1em;
+}
+
+.side-nav-closed {
+	width: 0px;
+    -webkit-transition: all 0.25s linear;
+       -moz-transition: all 0.25s linear;
+        -ms-transition: all 0.25s linear;
+         -o-transition: all 0.25s linear;
+            transition: all 0.25s linear;
+}
+
+.side-nav-open {
+	width: 250px;
+    -webkit-transition: all 0.25s linear;
+       -moz-transition: all 0.25s linear;
+        -ms-transition: all 0.25s linear;
+         -o-transition: all 0.25s linear;
+            transition: all 0.25s linear;
+}
+
+.padded {
+	padding: calc(1.5em + 5px);
+}
