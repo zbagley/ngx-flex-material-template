@@ -75,3 +75,11 @@ html, body {
 	filter: brightness(85%);
     color: rgba(0,0,0,0.4);
 }
+
+/* nav bar size fix */
+.icon-nav.mat-tab-link {
+    min-width: 80px !important;
+}
+.icon-nav md-icon {
+    line-height: 2em;    
+}

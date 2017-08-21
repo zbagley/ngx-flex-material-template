@@ -1,7 +1,6 @@
 <div fxFlexFill fxLayout="column" class="full-height" fxLayoutAlign="center center">
-	<div fxFlex=10 class="full-width pad-sides">
-		<nav md-tab-nav-bar>
-			<a md-tab-link [routerLink]="['/home']"><i class="fa fa-line-chart fa-lg"></i></a>
+	<div fxFlex=10 class="full-width" fxFlexLayout="column">
+		<nav class="full-width" md-tab-nav-bar>
 			<a md-tab-link active="true">Login</a>
 			<a md-tab-link [routerLink]="['/acct/register']">Register</a>
 		</nav>
@@ -11,7 +10,7 @@
 			<h1 class="width-80" fxFlex=10>
 				Login
 			</h1>
-			<div class="width-80" fxFlex=90 fxLayout="column" fxLayoutAlign="start center">
+			<div class="width-80 pad-bot" fxFlex=90 fxLayout="column" fxLayoutAlign="start center">
 				<md-input-container [ngClass]="setClassEmail()">
 					<input mdInput type="email" name="email" formControlName="email" placeholder="Email" autofocus>
 				</md-input-container>
@@ -22,6 +21,9 @@
 					Login
 				</button>
 			</div>
+			<span class="width-80" fxFlex=90 fxLayout="column" fxLayoutAlign="start center">
+				Don't have an account yet? <a [routerLink]="['/acct/register']"> Register here.</a> It's free!
+			</span>
 		</form>
 	</div>
 	<div fxFlex=10></div>
