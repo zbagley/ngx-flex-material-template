@@ -1,7 +1,6 @@
-# Ngx Flex Material Template ![Data Standards Limited](https://datastandards.limited/android-icon-48x48.png)
+#  ![Data Standards Limited](https://datastandards.limited/android-icon-48x48.png) Ngx Flex Material Template
 
-##Demo
-https://demo.datastandards.limited/
+## [View Live Demo](https://demo.datastandards.limited/)
 
 A mobile-first template with packages implemented from:
 - [Angular CLI](https://github.com/angular/angular-cli) version 1.3.1.
