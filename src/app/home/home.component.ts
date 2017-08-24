@@ -8,9 +8,15 @@ import { AcctService } from '../services/acct/acct.service';
 })
 export class HomeComponent implements OnInit {
 
+
+  username = this.acctService.username;
   constructor(private acctService: AcctService) { }
 
   ngOnInit() {
+  }
+
+  isLoggedIn():boolean {
+  	return this.acctService.isLoggedIn();
   }
 
 }

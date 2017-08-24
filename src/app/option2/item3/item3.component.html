@@ -1,11 +1,11 @@
 <div fxFlexFill fxLayout="column" class="full-height" fxLayoutAlign="center center">
 	<div fxFlex=10 class="full-width" fxFlexLayout="column">
-		<nav class="full-width" md-tab-nav-bar *ngIf="!acctService.isLoggedIn()">
+		<nav class="full-width" md-tab-nav-bar *ngIf="!isLoggedIn()">
 			<a class="icon-nav" md-tab-link [routerLink]="['/option2']"><i class="fa fa-pencil fa-lg"></i></a>
 			<a md-tab-link [routerLink]="['/acct/login']">Login</a>
 			<a md-tab-link [routerLink]="['/acct/register']">Register</a>
 		</nav>
-		<nav class="full-width" md-tab-nav-bar *ngIf="acctService.isLoggedIn()">
+		<nav class="full-width" md-tab-nav-bar *ngIf="isLoggedIn()">
 			<a class="icon-nav" title="View current item." md-tab-link [routerLink]="['/option2']"><i class="fa fa-pencil fa-lg"></i></a>
 			<a class="icon-nav" title="Create new item." md-tab-link [routerLink]="['/option2/new']"><md-icon color="accent">add_circle</md-icon></a>
 			<a md-tab-link [routerLink]="['/option2/page1']">Page 1</a>
@@ -14,8 +14,8 @@
 		</nav>
 	</div>
 	<div fxFlex=90 fxLayout="column" class="pad-sides text-center">
-		<h1 fxFlex="50px" *ngIf="!acctService.isLoggedIn()">Page 3</h1>
-		<h1 fxFlex="50px" *ngIf="acctService.isLoggedIn()">Page 3, {{ acctService.username }}</h1>
+		<h1 fxFlex="50px" *ngIf="!isLoggedIn()">Page 3</h1>
+		<h1 fxFlex="50px" *ngIf="isLoggedIn()">Page 3, {{ username }}</h1>
 		<p fxFlex>
 			page3
 		</p>

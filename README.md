@@ -1,4 +1,4 @@
-# Ngx Flex Material Template ![Data Standards Limited](https://datastandards.limited/ms-icon-310x310.png)
+# Ngx Flex Material Template ![Data Standards Limited](https://datastandards.limited/android-icon-48x48.png)
 
 ##Demo
 https://demo.datastandards.limited/

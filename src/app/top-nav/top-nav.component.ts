@@ -8,6 +8,7 @@ import { AcctService } from '../services/acct/acct.service';
   styleUrls: ['./top-nav.component.css']
 })
 export class TopNavComponent {
+  username = this.acctService.username;
 
   constructor(
     private router: Router,
@@ -21,4 +22,11 @@ export class TopNavComponent {
     this.router.navigate(['/home']);
   }
 
+  logout() {
+    this.acctService.logout();
+  }
+
+  isLoggedIn():boolean {
+    return this.acctService.isLoggedIn();
+  }
 }
