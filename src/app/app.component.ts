@@ -13,7 +13,7 @@ export class AppComponent {
   navIsClosed = false;
 
   sideNavToggle() {
-    if ( this.sidenav._isOpened ) {
+    if ( this.sidenav.opened ) {
       this.navIcon = 'chevron_right';
       this.navIsClosed = true;
     } else {

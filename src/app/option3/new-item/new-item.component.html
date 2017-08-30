@@ -7,7 +7,7 @@
 		</nav>
 		<nav class="full-width" md-tab-nav-bar *ngIf="isLoggedIn()">
 			<a class="icon-nav" title="View current item." md-tab-link [routerLink]="['/option3']"><i class="fa fa-database fa-lg"></i></a>
-			<a class="icon-nav" title="Create new item." md-tab-link active="true" [routerLink]="['/option3/new']"><md-icon color="accent">add_circle</md-icon></a>
+			<a title="Create new item." md-tab-link active="true" [routerLink]="['/option3/new']"><md-icon color="accent">add_circle</md-icon></a>
 			<a md-tab-link [routerLink]="['/option3/page1']">Page 1</a>
 			<a md-tab-link [routerLink]="['/option3/page2']">Page 2</a>
 			<a md-tab-link [routerLink]="['/option3/page3']">Page 3</a>
