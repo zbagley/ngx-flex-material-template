@@ -15,13 +15,13 @@ export class SideNavComponent implements OnInit {
 
   getColorForRoute(route): string {
     if ( this.router.url.lastIndexOf('/home', 0) === 0 && route === 'home') {
-      return 'accent';
-    } else if ( this.router.url.lastIndexOf('/option2', 0) === 0 && route === 'option2' ) {
-      return 'accent';
-    } else if ( this.router.url.lastIndexOf('/option3', 0) === 0 && route === 'option3' ) {
-      return 'accent';
-    } else {
       return 'primary';
+    } else if ( this.router.url.lastIndexOf('/option2', 0) === 0 && route === 'option2' ) {
+      return 'primary';
+    } else if ( this.router.url.lastIndexOf('/option3', 0) === 0 && route === 'option3' ) {
+      return 'primary';
+    } else {
+      return 'accent';
     }
   }
 

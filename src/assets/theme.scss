@@ -7,3 +7,13 @@ $my-accent: mat-palette($mat-blue-grey, 200, 50, 500);
 $my-theme: mat-light-theme($my-primary, $my-accent);
 
 @include angular-material-theme($my-theme);
+
+.footer {
+	background-color: mat-color($mat-blue-grey, 200);
+}
+.top-nav {
+	background-color: mat-color($mat-teal, 300);
+}
+.circle {
+	background-color: mat-color($mat-teal, 300);
+}
