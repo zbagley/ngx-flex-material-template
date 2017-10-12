@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AcctService } from '../../services/acct/acct.service';
 
 @Component({
@@ -7,7 +7,9 @@ import { AcctService } from '../../services/acct/acct.service';
   styleUrls: ['./item3.component.css']
 })
 export class Item3Component implements OnInit {
-
+  @Input() family;
+  @Input() genus;
+  @Input() species;
 
   username = this.acctService.username;
   constructor(private acctService: AcctService) { }
@@ -15,8 +17,8 @@ export class Item3Component implements OnInit {
   ngOnInit() {
   }
 
-  isLoggedIn():boolean {
-  	return this.acctService.isLoggedIn();
+  isLoggedIn(): boolean {
+    return this.acctService.isLoggedIn();
   }
 
 }

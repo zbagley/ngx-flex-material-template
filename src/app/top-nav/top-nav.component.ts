@@ -26,7 +26,7 @@ export class TopNavComponent {
     this.acctService.logout();
   }
 
-  isLoggedIn():boolean {
+  isLoggedIn(): boolean {
     return this.acctService.isLoggedIn();
   }
 }

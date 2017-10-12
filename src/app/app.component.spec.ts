@@ -30,7 +30,6 @@ describe('LoginComponent', () => {
         { provide: FormBuilder, useClass: FormBuilder },
         { provide: RouterTestingModule, useClass: RouterTestingModule }
       ]
-      
     })
     .compileComponents();
   }));

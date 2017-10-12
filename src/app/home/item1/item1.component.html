@@ -1,23 +1,23 @@
 <div fxFlexFill fxLayout="column" class="full-height" fxLayoutAlign="center center">
-	<div fxFlex=10 class="full-width" fxFlexLayout="column">
-		<nav class="full-width" md-tab-nav-bar *ngIf="!isLoggedIn()">
-			<a class="icon-nav" md-tab-link active="true"><i class="fa fa-line-chart fa-lg"></i></a>
-			<a md-tab-link [routerLink]="['/acct/login']">Login</a>
-			<a md-tab-link [routerLink]="['/acct/register']">Register</a>
-		</nav>
-		<nav class="full-width" md-tab-nav-bar *ngIf="isLoggedIn()">
-			<a class="icon-nav" title="View current item." md-tab-link [routerLink]="['/home']"><i class="fa fa-line-chart fa-lg"></i></a>
-			<a title="Create new item." md-tab-link [routerLink]="['/home/new']"><md-icon color="accent" class="home-icon">add_circle</md-icon></a>
-			<a md-tab-link active="true" [routerLink]="['/home/page1']">Page 1</a>
-			<a md-tab-link [routerLink]="['/home/page2']">Page 2</a>
-			<a md-tab-link [routerLink]="['/home/page3']">Page 3</a>
-		</nav>
-	</div>
-	<div fxFlex=90 fxLayout="column" class="pad-sides text-center">
-		<h1 fxFlex="50px" *ngIf="!isLoggedIn()">Page 1</h1>
-		<h1 fxFlex="50px" *ngIf="isLoggedIn()">Page 1, {{ username }}</h1>
-		<p fxFlex>
-			page1
-		</p>
-	</div>
+  <div fxFlex=10 class="full-width" fxFlexLayout="column">
+    <nav class="full-width" md-tab-nav-bar *ngIf="!isLoggedIn()">
+      <a class="icon-nav" md-tab-link active="true"><i class="fa fa-line-chart fa-lg"></i></a>
+      <a md-tab-link [routerLink]="['/acct/login']">Login</a>
+      <a md-tab-link [routerLink]="['/acct/register']">Register</a>
+    </nav>
+    <nav class="full-width" md-tab-nav-bar *ngIf="isLoggedIn()">
+      <a class="icon-nav" title="View current item." md-tab-link [routerLink]="['/home']"><i class="fa fa-line-chart fa-lg"></i></a>
+      <a title="Create new item." md-tab-link [routerLink]="['/home/new']"><md-icon color="accent" class="home-icon">add_circle</md-icon></a>
+      <a md-tab-link active="true" [routerLink]="['/home/page1']">Page 1</a>
+      <a md-tab-link [routerLink]="['/home/page2']">Page 2</a>
+      <a md-tab-link [routerLink]="['/home/page3']">Page 3</a>
+    </nav>
+  </div>
+  <div fxFlex=90 fxLayout="column" class="pad-sides text-center">
+    <h1 fxFlex="50px" *ngIf="!isLoggedIn()">Page 1</h1>
+    <h1 fxFlex="50px" *ngIf="isLoggedIn()">Page 1, {{ username }}</h1>
+    <p fxFlex>
+      page1
+    </p>
+  </div>
 </div>

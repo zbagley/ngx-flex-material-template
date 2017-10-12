@@ -1,27 +1,58 @@
 <div fxFlexFill fxLayout="column" class="full-height" fxLayoutAlign="center center">
-	<div fxFlex=10 class="full-width" fxFlexLayout="column">
-		<nav class="full-width" md-tab-nav-bar *ngIf="!isLoggedIn()">
-			<a class="icon-nav" md-tab-link active="true"><i class="fa fa-database fa-lg"></i></a>
-			<a md-tab-link [routerLink]="['/acct/login']">Login</a>
-			<a md-tab-link [routerLink]="['/acct/register']">Register</a>
-		</nav>
-		<nav class="full-width" md-tab-nav-bar *ngIf="isLoggedIn()">
-			<a class="icon-nav" title="View current item." md-tab-link active="true"><i class="fa fa-database fa-lg"></i></a>
-			<a title="Create new item." md-tab-link [routerLink]="['/option3/new']"><md-icon color="primary">add_circle</md-icon></a>
-			<a md-tab-link [routerLink]="['/option3/page1']">Page 1</a>
-			<a md-tab-link [routerLink]="['/option3/page2']">Page 2</a>
-			<a md-tab-link [routerLink]="['/option3/page3']">Page 3</a>
-		</nav>
-	</div>
-	<div fxFlex=90 fxLayout="column" class="pad-sides text-center">
-		<h1 fxFlex="50px" *ngIf="!isLoggedIn()">Default Option 3!</h1>
-		<h1 fxFlex="50px" *ngIf="isLoggedIn()">Welcome to Option 3, {{ username }}!</h1>
-		<p fxFlex>
-			Spicy jalapeno bacon ipsum dolor amet leberkas incididunt aliqua dolor flank pariatur jowl pastrami. Bacon turkey magna eiusmod dolore enim venison filet mignon. Labore drumstick tempor ribeye strip steak, duis culpa capicola picanha est meatloaf shoulder ut mollit. Aliqua esse salami drumstick dolore ut exercitation do elit proident tenderloin pancetta in. Tempor aliqua minim swine, fugiat shoulder beef ribs meatball.
-			<br><br>
-			Cupidatat tail irure, enim cupim bacon venison dolor meatball officia mollit pork loin. Exercitation sausage ribeye occaecat. Drumstick aute chicken magna aliqua, jowl velit beef ribs lorem ullamco flank ad et sunt. Doner magna sirloin, porchetta t-bone pork loin sed cow in pancetta ground round pariatur dolore. Turkey dolore excepteur tail cow, pork chop ut aliqua kevin.
-			<br><br>
-			Commodo bresaola meatloaf ground round. Rump ribeye jowl reprehenderit qui anim brisket filet mignon hamburger shank picanha cupidatat kevin. In consectetur ipsum voluptate qui, pork pastrami alcatra boudin aute. Kevin short ribs spare ribs, swine culpa consequat sirloin shoulder frankfurter short loin adipisicing tenderloin. Eu lorem brisket anim alcatra corned beef, cow capicola.
-		</p>
-	</div>
+  <div class="full-width bordered" fxFlexLayout="column">
+      <div fxLayoutWrap fxLayout="row" class="full-width" *ngIf="order">
+        <md-toolbar class="border-full" color="primary" fxFlex.gt-sm="250px" fxFlex.lt-md=100 [routerLink]="['/option3']">
+          <md-icon>home</md-icon>
+          <span style="flex: 1 1 auto;"></span>
+          <span>Animals</span>
+        </md-toolbar>
+        <md-toolbar *ngIf="currentFamily !== -1" class="border-full" color="" fxFlex.gt-sm="250px" fxFlex.lt-md=100>
+          <span *ngIf="currentGenus === -1" class="full-width">
+            <md-select panelClass="width-80" placeholder="current family" floatPlaceholder="always" class="full-width" [ngModel]="currentFamily" (ngModelChange)="currentFamily=$event;loadRoute('family');">
+              <md-option *ngFor="let fam of order.family; let i = index;" [value]="i">
+                {{fam.id}}
+              </md-option>
+            </md-select>
+          </span>
+          <span *ngIf="currentGenus !== -1" class="full-width clickable" (click)="loadRoute('family')">Family: {{order.family[currentFamily].id}}</span>
+        </md-toolbar>
+        <md-toolbar class="border-full" color="" fxFlex.gt-sm="250px" fxFlex.lt-md=100 *ngIf="currentGenus !== -1">
+          <span class="full-width" *ngIf="currentSpecies === -1">
+            <md-select placeholder="current genus" floatPlaceholder="always" class="full-width" [ngModel]="currentGenus" (ngModelChange)="currentGenus=$event;loadRoute('genus');">
+              <md-option *ngFor="let gen of order.family[currentFamily].genus; let i = index;" [value]="i">
+                {{gen.id}}
+              </md-option>
+            </md-select>
+          </span>
+          <span *ngIf="currentSpecies !== -1" class="full-width clickable" (click)="loadRoute('genus')">Genus: {{order.family[currentFamily].genus[currentGenus].id}}</span>
+        </md-toolbar>
+        <md-toolbar class="border-full" color="" fxFlex.gt-sm="250px" fxFlex.lt-md=100 *ngIf="currentSpecies !== -1">
+          <span class="full-width">
+            <md-select placeholder="current species" floatPlaceholder="always" class="full-width" [ngModel]="currentSpecies" (ngModelChange)="currentSpecies=$event;loadRoute('species');">
+              <md-option *ngFor="let spec of order.family[currentFamily].genus[currentGenus].species; let i = index;" [value]="i">
+                {{spec}}
+              </md-option>
+            </md-select>
+          </span>
+        </md-toolbar>
+      </div>
+      <div *ngIf="currentGenus === -1 || currentSpecies === -1" fxLayout="column" class="padded">
+        <h3>Pick A
+          <ng-container *ngIf="currentFamily === -1">Family</ng-container>
+          <ng-container *ngIf="currentGenus === -1 && currentFamily !== -1">Genus</ng-container>
+          <ng-container *ngIf="currentGenus !== -1">Species</ng-container>
+        </h3>
+
+        <md-toolbar class="border-full clickable set-width" [ngStyle]="{'background-color': colors[i] }" fxFlex="50px" *ngFor="let menuItem of currentSubmenu; let i = index;" (click)="setItem(menuItem);">
+          {{menuItem}}
+        </md-toolbar>
+      </div>
+  </div>
+  <div fxFlex=90 fxLayout="column" class="pad-sides text-center">
+    <div fxFlex fxLayout="column" fxLayoutAlign="start center" class="full-width">
+      <app-item1 *ngIf="currentGenus === -1 && currentFamily !== -1" [family]="order.family[currentFamily]"></app-item1>
+      <app-item2 *ngIf="currentSpecies === -1 && currentGenus !== -1" [family]="order.family[currentFamily]" [genus]="order.family[currentFamily].genus[currentGenus]"></app-item2>
+      <app-item3 *ngIf="currentSpecies !== -1" [family]="order.family[currentFamily]" [genus]="order.family[currentFamily].genus[currentGenus]" [species]="order.family[currentFamily].genus[currentGenus].species[currentSpecies]"></app-item3>
+    </div>
+  </div>
 </div>

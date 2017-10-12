@@ -11,19 +11,19 @@ export class AcctService {
   public loginState = this._loginState.asObservable();
 
   login() {
-  	this._loginState.next(true);
+    this._loginState.next(true);
   }
 
   logout() {
-  	this._loginState.next(false);
+    this._loginState.next(false);
   }
 
   isLoggedIn(): boolean {
-  	if (this._loginState.getValue()) {
-  		return true;
-  	} else {
-  		return false;
-  	}
+    if (this._loginState.getValue()) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   constructor() { }

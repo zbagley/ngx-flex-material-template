@@ -1,0 +1,15 @@
+.bordered {
+  border-top: 3px solid black;
+}
+
+.border-left {
+  border-left: 1.5px solid black;
+}
+
+.border-full {
+  border: 1px solid black;
+}
+
+.set-width {
+	width: 250px;
+}

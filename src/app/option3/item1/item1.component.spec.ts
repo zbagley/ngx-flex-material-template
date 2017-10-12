@@ -1,6 +1,6 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AcctService } from '../../services/acct/acct.service';
 import { SharedModule } from '../../shared/shared.module';
 
@@ -13,10 +13,9 @@ describe('Item1Component', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ Item1Component ],
-      imports: [ SharedModule, BrowserAnimationsModule, RouterTestingModule ],
+      imports: [ SharedModule, BrowserAnimationsModule ],
       providers: [
-        { provide: AcctService, useClass: AcctService },
-        { provide: RouterTestingModule, useClass: RouterTestingModule }
+        { provide: AcctService, useClass: AcctService }
       ]
     })
     .compileComponents();
@@ -25,6 +24,7 @@ describe('Item1Component', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(Item1Component);
     component = fixture.componentInstance;
+    component.family = { id: 'test' };
     fixture.detectChanges();
   });
 

@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AcctService } from '../services/acct/acct.service';
@@ -19,7 +20,8 @@ describe('Option3Component', () => {
         { provide: AcctService, useClass: AcctService },
         { provide: FormBuilder, useClass: FormBuilder },
         { provide: RouterTestingModule, useClass: RouterTestingModule }
-      ]
+      ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     })
     .compileComponents();
   }));

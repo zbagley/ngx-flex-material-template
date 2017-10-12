@@ -43,10 +43,10 @@ a md-icon {
 }
 
 .circle {
-	position: relative;
-	z-index: 5000;
-	top: calc(50% - 1.5em);
-	left: calc(100% - 1.5em);
+    position: relative;
+    z-index: 5000;
+    top: calc(50% - 1.5em);
+    left: calc(250px - 1.5em);
     width: 3em;
     height: 3em;
     border-radius: 1.5em;

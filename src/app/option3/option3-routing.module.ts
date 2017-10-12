@@ -9,15 +9,14 @@ import { NewItemComponent } from './new-item/new-item.component';
 
 const routes: Routes = [
   {
-  	path: '',
-  	children: [
-  	  { path: '', component: Option3Component },
-  	  { path: 'new', component: NewItemComponent },
-  	  { path: 'page1', component: Item1Component },
-  	  { path: 'page2', component: Item2Component },
-  	  { path: 'page3', component: Item3Component },
-  	  { path: '**', redirectTo: '/option3' }
-  	]
+    path: '',
+    children: [
+      { path: '', component: Option3Component },
+      { path: ':lvl1/:lvl2/:lvl3', component: Option3Component },
+      { path: ':lvl1/:lvl2', component: Option3Component },
+      { path: ':lvl1', component: Option3Component },
+      { path: '**', redirectTo: '/option3' }
+    ]
   }
 ];
 

@@ -1,6 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AcctService } from '../../services/acct/acct.service';
 import { SharedModule } from '../../shared/shared.module';
 
@@ -13,10 +12,9 @@ describe('Item2Component', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ Item2Component ],
-      imports: [ SharedModule, BrowserAnimationsModule, RouterTestingModule ],
+      imports: [ SharedModule, BrowserAnimationsModule ],
       providers: [
-        { provide: AcctService, useClass: AcctService },
-        { provide: RouterTestingModule, useClass: RouterTestingModule }
+        { provide: AcctService, useClass: AcctService }
       ]
     })
     .compileComponents();
@@ -25,6 +23,8 @@ describe('Item2Component', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(Item2Component);
     component = fixture.componentInstance;
+    component.family = { id: 'test' };
+    component.genus = { id: 'test' };
     fixture.detectChanges();
   });
 

@@ -9,8 +9,8 @@
   <div fxFlex=50 fxLayoutAlign="end center" *ngIf="isLoggedIn()">
     <button md-button [mdMenuTriggerFor]="menu"><md-icon>account_circle</md-icon><u>{{ username }}</u></button>
     <md-menu #menu="mdMenu" [overlapTrigger]="false">
-    	<button md-menu-item [routerLink]="['/acct/myaccount']">Settings</button>
-    	<button md-menu-item (click)="logout();acctClick();">Logout</button>
+      <button md-menu-item [routerLink]="['/acct/myaccount']">Settings</button>
+      <button md-menu-item (click)="logout();acctClick();">Logout</button>
     </md-menu>
   </div>
 </div>

@@ -1,9 +1,18 @@
 .circle-closed {
-	left: -1em;
+    opacity: 0.25;
+  left: -1em;
+}
+.circle-closed:hover {
+    opacity: 1;
+    -webkit-transition: all 0.5s linear;
+       -moz-transition: all 0.5s linear;
+        -ms-transition: all 0.5s linear;
+         -o-transition: all 0.5s linear;
+            transition: all 0.5s linear;
 }
 
 .side-nav-closed {
-	width: 0px;
+  width: 0px;
     -webkit-transition: all 0.25s linear;
        -moz-transition: all 0.25s linear;
         -ms-transition: all 0.25s linear;
@@ -12,7 +21,7 @@
 }
 
 .side-nav-open {
-	width: 250px;
+  width: 250px;
     -webkit-transition: all 0.25s linear;
        -moz-transition: all 0.25s linear;
         -ms-transition: all 0.25s linear;
@@ -21,5 +30,5 @@
 }
 
 .padded {
-	padding: calc(1.5em + 5px);
+  padding: calc(1.5em + 5px);
 }

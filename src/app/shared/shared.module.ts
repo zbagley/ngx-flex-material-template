@@ -9,7 +9,8 @@ import {
   MdSelectModule,
   MdMenuModule,
   MdSidenavModule,
-  MdTabsModule
+  MdTabsModule,
+  MdToolbarModule
 } from '@angular/material';
 
 @NgModule({
@@ -24,7 +25,8 @@ import {
     MdSelectModule,
     MdMenuModule,
     MdSidenavModule,
-    MdTabsModule
+    MdTabsModule,
+    MdToolbarModule
   ],
   exports: [
     FormsModule,
@@ -36,7 +38,8 @@ import {
     MdSelectModule,
     MdMenuModule,
     MdSidenavModule,
-    MdTabsModule
+    MdTabsModule,
+    MdToolbarModule
   ]
 })
 export class SharedModule { }

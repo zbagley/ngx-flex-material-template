@@ -9,14 +9,14 @@ import { LoggedInGuard, LoggedOutGuard } from '../guards';
 
 const routes: Routes = [
   {
-  	path: '',
-  	children: [
-  	  { path: 'login', component: LoginComponent, canActivate: [LoggedOutGuard] },
-  	  { path: 'register', component: RegisterComponent, canActivate: [LoggedOutGuard]  },
+    path: '',
+    children: [
+      { path: 'login', component: LoginComponent, canActivate: [LoggedOutGuard] },
+      { path: 'register', component: RegisterComponent, canActivate: [LoggedOutGuard]  },
       { path: 'myaccount', component: MyAccountComponent, canActivate: [LoggedInGuard] },
       { path: '', redirectTo: '/acct/login' },
-  	  { path: '**', redirectTo: '/acct/login' }
-  	]
+      { path: '**', redirectTo: '/acct/login' }
+    ]
   }
 ];
 
