@@ -1,4 +1,5 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
+.gitignore
 
 # compiled output
 /dist
@@ -41,3 +42,28 @@ yarn-error.log
 # System Files
 .DS_Store
 Thumbs.db
+
+src/assets/bengalensis.jpg
+src/assets/bieti.jpg
+src/assets/catus.jpg
+src/assets/chaus.jpg
+src/assets/cluniculus.jpg
+src/assets/colocolo.jpg
+src/assets/deinonychus.jpg
+src/assets/dirus.jpg
+src/assets/geoffroyi.jpg
+src/assets/guigna.jpg
+src/assets/javanensis.jpg
+src/assets/lagopus.jpg
+src/assets/latrans.jpg
+src/assets/lupus.jpg
+src/assets/margarita.jpg
+src/assets/nigripes.jpg
+src/assets/pardalis.jpg
+src/assets/planiceps.jpg
+src/assets/rubiginosus.jpg
+src/assets/silvestris.jpg
+src/assets/tigrinus.jpg
+src/assets/viverrinus.jpg
+src/assets/vulpes.jpg
+src/assets/wiedii.jpg

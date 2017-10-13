@@ -50,9 +50,9 @@
   </div>
   <div fxFlex=90 fxLayout="column" class="pad-sides text-center">
     <div fxFlex fxLayout="column" fxLayoutAlign="start center" class="full-width">
-      <app-item1 *ngIf="currentGenus === -1 && currentFamily !== -1" [family]="order.family[currentFamily]"></app-item1>
-      <app-item2 *ngIf="currentSpecies === -1 && currentGenus !== -1" [family]="order.family[currentFamily]" [genus]="order.family[currentFamily].genus[currentGenus]"></app-item2>
-      <app-item3 *ngIf="currentSpecies !== -1" [family]="order.family[currentFamily]" [genus]="order.family[currentFamily].genus[currentGenus]" [species]="order.family[currentFamily].genus[currentGenus].species[currentSpecies]"></app-item3>
+      <app-item1 class="full-width" *ngIf="currentGenus === -1 && currentFamily !== -1" [family]="order.family[currentFamily]"></app-item1>
+      <app-item2 class="full-width" *ngIf="currentSpecies === -1 && currentGenus !== -1" [family]="order.family[currentFamily]" [genus]="order.family[currentFamily].genus[currentGenus]"></app-item2>
+      <app-item3 class="full-width" *ngIf="currentSpecies !== -1" [family]="order.family[currentFamily]" [genus]="order.family[currentFamily].genus[currentGenus]" [species]="order.family[currentFamily].genus[currentGenus].species[currentSpecies]"></app-item3>
     </div>
   </div>
 </div>
