@@ -8,7 +8,6 @@ import { RoutingModule } from './routing.module';
 
 import { AppComponent } from './app.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
-import { SideNavComponent } from './side-nav/side-nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AcctService } from './services/acct/acct.service';
@@ -19,7 +18,6 @@ import { LoggedOutGuard } from './guards/logged-out.guard';
   declarations: [
     AppComponent,
     TopNavComponent,
-    SideNavComponent,
     FooterComponent,
     PageNotFoundComponent
   ],

@@ -9,6 +9,10 @@ a md-icon {
     vertical-align: middle;
 }
 
+img {
+    max-width: 85%;
+}
+
 .overflow {
 	overflow-y: auto;
 }

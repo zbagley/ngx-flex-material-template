@@ -11,7 +11,7 @@ $my-theme: mat-light-theme($my-primary, $my-accent);
 .footer {
 	background-color: mat-color($mat-blue-grey, 200);
 }
-.top-nav {
+app-top-nav {
 	background-color: mat-color($mat-teal, 300);
 }
 .circle {

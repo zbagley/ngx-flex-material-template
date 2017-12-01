@@ -3,14 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
-  MdButtonModule,
-  MdIconModule,
-  MdInputModule,
-  MdSelectModule,
-  MdMenuModule,
-  MdSidenavModule,
-  MdTabsModule,
-  MdToolbarModule
+  MatButtonModule,
+  MatIconModule,
+  MatInputModule,
+  MatSelectModule,
+  MatMenuModule,
+  MatTabsModule,
+  MatToolbarModule
 } from '@angular/material';
 
 @NgModule({
@@ -19,27 +18,25 @@ import {
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    MdButtonModule,
-    MdIconModule,
-    MdInputModule,
-    MdSelectModule,
-    MdMenuModule,
-    MdSidenavModule,
-    MdTabsModule,
-    MdToolbarModule
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule,
+    MatSelectModule,
+    MatMenuModule,
+    MatTabsModule,
+    MatToolbarModule
   ],
   exports: [
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    MdButtonModule,
-    MdIconModule,
-    MdInputModule,
-    MdSelectModule,
-    MdMenuModule,
-    MdSidenavModule,
-    MdTabsModule,
-    MdToolbarModule
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule,
+    MatSelectModule,
+    MatMenuModule,
+    MatTabsModule,
+    MatToolbarModule
   ]
 })
 export class SharedModule { }

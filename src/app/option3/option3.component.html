@@ -1,40 +1,40 @@
 <div fxFlexFill fxLayout="column" class="full-height" fxLayoutAlign="center center">
   <div class="full-width bordered" fxFlexLayout="column">
       <div fxLayoutWrap fxLayout="row" class="full-width" *ngIf="order">
-        <md-toolbar class="border-full" color="primary" fxFlex.gt-sm="250px" fxFlex.lt-md=100 [routerLink]="['/option3']">
-          <md-icon>home</md-icon>
+        <mat-toolbar class="border-full" color="primary" fxFlex.gt-sm="250px" fxFlex.lt-md=100 [routerLink]="['/option3']">
+          <mat-icon>home</mat-icon>
           <span style="flex: 1 1 auto;"></span>
           <span>Animals</span>
-        </md-toolbar>
-        <md-toolbar *ngIf="currentFamily !== -1" class="border-full" color="" fxFlex.gt-sm="250px" fxFlex.lt-md=100>
+        </mat-toolbar>
+        <mat-toolbar *ngIf="currentFamily !== -1" class="border-full" color="" fxFlex.gt-sm="250px" fxFlex.lt-md=100>
           <span *ngIf="currentGenus === -1" class="full-width">
-            <md-select panelClass="width-80" placeholder="current family" floatPlaceholder="always" class="full-width" [ngModel]="currentFamily" (ngModelChange)="currentFamily=$event;loadRoute('family');">
-              <md-option *ngFor="let fam of order.family; let i = index;" [value]="i">
+            <mat-select panelClass="width-80" placeholder="current family" floatPlaceholder="always" class="full-width" [ngModel]="currentFamily" (ngModelChange)="currentFamily=$event;loadRoute('family');">
+              <mat-option *ngFor="let fam of order.family; let i = index;" [value]="i">
                 {{fam.id}}
-              </md-option>
-            </md-select>
+              </mat-option>
+            </mat-select>
           </span>
           <span *ngIf="currentGenus !== -1" class="full-width clickable" (click)="loadRoute('family')">Family: {{order.family[currentFamily].id}}</span>
-        </md-toolbar>
-        <md-toolbar class="border-full" color="" fxFlex.gt-sm="250px" fxFlex.lt-md=100 *ngIf="currentGenus !== -1">
+        </mat-toolbar>
+        <mat-toolbar class="border-full" color="" fxFlex.gt-sm="250px" fxFlex.lt-md=100 *ngIf="currentGenus !== -1">
           <span class="full-width" *ngIf="currentSpecies === -1">
-            <md-select placeholder="current genus" floatPlaceholder="always" class="full-width" [ngModel]="currentGenus" (ngModelChange)="currentGenus=$event;loadRoute('genus');">
-              <md-option *ngFor="let gen of order.family[currentFamily].genus; let i = index;" [value]="i">
+            <mat-select placeholder="current genus" floatPlaceholder="always" class="full-width" [ngModel]="currentGenus" (ngModelChange)="currentGenus=$event;loadRoute('genus');">
+              <mat-option *ngFor="let gen of order.family[currentFamily].genus; let i = index;" [value]="i">
                 {{gen.id}}
-              </md-option>
-            </md-select>
+              </mat-option>
+            </mat-select>
           </span>
           <span *ngIf="currentSpecies !== -1" class="full-width clickable" (click)="loadRoute('genus')">Genus: {{order.family[currentFamily].genus[currentGenus].id}}</span>
-        </md-toolbar>
-        <md-toolbar class="border-full" color="" fxFlex.gt-sm="250px" fxFlex.lt-md=100 *ngIf="currentSpecies !== -1">
+        </mat-toolbar>
+        <mat-toolbar class="border-full" color="" fxFlex.gt-sm="250px" fxFlex.lt-md=100 *ngIf="currentSpecies !== -1">
           <span class="full-width">
-            <md-select placeholder="current species" floatPlaceholder="always" class="full-width" [ngModel]="currentSpecies" (ngModelChange)="currentSpecies=$event;loadRoute('species');">
-              <md-option *ngFor="let spec of order.family[currentFamily].genus[currentGenus].species; let i = index;" [value]="i">
+            <mat-select placeholder="current species" floatPlaceholder="always" class="full-width" [ngModel]="currentSpecies" (ngModelChange)="currentSpecies=$event;loadRoute('species');">
+              <mat-option *ngFor="let spec of order.family[currentFamily].genus[currentGenus].species; let i = index;" [value]="i">
                 {{spec}}
-              </md-option>
-            </md-select>
+              </mat-option>
+            </mat-select>
           </span>
-        </md-toolbar>
+        </mat-toolbar>
       </div>
       <div *ngIf="currentGenus === -1 || currentSpecies === -1" fxLayout="column" class="padded">
         <h3>Pick A
@@ -43,9 +43,9 @@
           <ng-container *ngIf="currentGenus !== -1">Species</ng-container>
         </h3>
 
-        <md-toolbar class="border-full clickable set-width" [ngStyle]="{'background-color': colors[i] }" fxFlex="50px" *ngFor="let menuItem of currentSubmenu; let i = index;" (click)="setItem(menuItem);">
+        <mat-toolbar class="border-full clickable set-width" [ngStyle]="{'background-color': colors[i] }" fxFlex="50px" *ngFor="let menuItem of currentSubmenu; let i = index;" (click)="setItem(menuItem);">
           {{menuItem}}
-        </md-toolbar>
+        </mat-toolbar>
       </div>
   </div>
   <div fxFlex=90 fxLayout="column" class="pad-sides text-center">

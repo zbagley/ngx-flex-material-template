@@ -1,8 +1,8 @@
 <div fxFlexFill fxLayout="column" class="full-height" fxLayoutAlign="center center">
   <div fxFlex=10 class="full-width" fxFlexLayout="column">
-    <nav class="full-width" md-tab-nav-bar>
-      <a md-tab-link active="true">Login</a>
-      <a md-tab-link [routerLink]="['/acct/register']">Register</a>
+    <nav class="full-width" mat-tab-nav-bar>
+      <a mat-tab-link active="true">Login</a>
+      <a mat-tab-link [routerLink]="['/acct/register']">Register</a>
     </nav>
   </div>
   <div fxFlex=80 class="full-width pad-sides text-center">
@@ -11,13 +11,13 @@
         Login
       </h1>
       <div class="width-80 pad-bot" fxFlex=90 fxLayout="column" fxLayoutAlign="start center">
-        <md-input-container [ngClass]="setClassEmail()">
-          <input mdInput type="email" name="email" formControlName="email" placeholder="Email" autofocus>
-        </md-input-container>
-        <md-input-container [ngClass]="setClassPassword()">
-          <input mdInput type="password" name="password" formControlName="password" placeholder="Password">
-        </md-input-container>
-        <button md-raised-button color="primary" class="btn-reg" type="submit" [disabled]="!loginForm.valid">
+        <mat-input-container [ngClass]="setClassEmail()">
+          <input matInput type="email" name="email" formControlName="email" placeholder="Email" autofocus>
+        </mat-input-container>
+        <mat-input-container [ngClass]="setClassPassword()">
+          <input matInput type="password" name="password" formControlName="password" placeholder="Password">
+        </mat-input-container>
+        <button mat-raised-button color="primary" class="btn-reg" type="submit" [disabled]="!loginForm.valid">
           Login
         </button>
       </div>

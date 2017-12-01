@@ -1,28 +1,10 @@
-<div fxFlexFill fxLayout="column" fxLayoutAlign="center stretch">
+<div fxFlexFill fxLayout="column" fxLayoutAlign="start stretch">
     <!-- Top Nav -->
-    <div fxFlex="100px">
-      <app-top-nav fxFlexFill FxLayout="row"></app-top-nav>
-    </div>
+    <app-top-nav></app-top-nav>
 
     <!-- Body -->
-    <div fxFlex fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-around stretch">
-      <md-sidenav-container fxFlexFill>
-        <!-- Side-Nav -->
-        <div [ngClass]="{'side-nav-closed': navIsClosed, 'side-nav-open': !navIsClosed }">
-          <md-sidenav #sidenav [ngClass]="{'side-nav-closed': navIsClosed, 'side-nav-open': !navIsClosed }" mode="push" align="left" opened="true">
-            <app-side-nav fxFlexFill></app-side-nav>
-          </md-sidenav>
-          <div class="circle clickable" [ngClass]="{'circle-closed': navIsClosed }" (click)="sideNavToggle();"><md-icon>{{ navIcon }}</md-icon></div>
-        </div>
-        <!-- Main Outlet -->
-        <div fxFlex fxFlex.lt-sm="100" class="overflow">
-          <router-outlet fxFlexFill></router-outlet>
-        </div>
-      </md-sidenav-container>
-    </div>
+    <router-outlet fxFlex></router-outlet>
 
     <!-- Footer -->
-    <div fxFlex="50px">
-      <app-footer></app-footer>
-    </div>
+    <app-footer></app-footer>
 </div>

@@ -1,16 +1,29 @@
-<div fxFlex=100 fxLayout="row" class="top-nav">
-  <div fxFlex=50 fxLayoutAlign="start center">
-    <img src="/assets/ms-icon-310x310.png" class="clickable" (click)="homeClick();">
-    <h1 class="clickable" (click)="homeClick();">DSLimited</h1>
-  </div>
-  <div fxFlex=50 fxLayoutAlign="end center" *ngIf="!isLoggedIn()">
-    <button md-button (click)="acctClick();"><u>Login</u></button>
-  </div>
-  <div fxFlex=50 fxLayoutAlign="end center" *ngIf="isLoggedIn()">
-    <button md-button [mdMenuTriggerFor]="menu"><md-icon>account_circle</md-icon><u>{{ username }}</u></button>
-    <md-menu #menu="mdMenu" [overlapTrigger]="false">
-      <button md-menu-item [routerLink]="['/acct/myaccount']">Settings</button>
-      <button md-menu-item (click)="logout();acctClick();">Logout</button>
-    </md-menu>
+<div fxLayout="column" class="full-width">
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <div fxFlex="20px"></div>
+    <div class="logo clickable" [routerLink]="['/home']"><img src="/assets/ms-icon-310x310.png"></div>
+    <h1 class="pad-sides clickable" [routerLink]="['/home']">DSLimited</h1>
+    <div fxFlex></div>
+    <div class="clickable" [routerLink]="['/acct/myaccount']" fxHide.lt-md><h3><u>Option 1</u></h3></div>
+    <div fxFlex="20px" fxHide.lt-md></div>
+    <div class="clickable" [routerLink]="['/acct/myaccount']" fxHide.lt-md><h3><u>Option 2</u></h3></div>
+    <div fxFlex="20px" fxHide.lt-md></div>
+    <div class="clickable" [routerLink]="['/acct/myaccount']" fxHide.lt-md><h3><u>Option 3</u></h3></div>
+    <div fxFlex="20px" fxHide.lt-md></div>
+    <div class="clickable" [routerLink]="['/acct/login']" fxHide.lt-md *ngIf="!isLoggedIn()"><h3><u>Login / Register</u></h3></div>
+    <div fxFlex fxHide.lt-md></div>
+    <div class="clickable" fxHide.lt-md *ngIf="isLoggedIn()" [matMenuTriggerFor]="menu"><h3><mat-icon>account_circle</mat-icon><u>{{ username }}</u></h3></div>
+    <div [matMenuTriggerFor]="mobileMenu" fxHide.gt-sm><h3><mat-icon class="pad clickable">menu</mat-icon></h3></div>
+    <div fxFlex.lt-md=5 fxFlex.gt-sm="20px"></div>
+    <mat-menu #mobileMenu="matMenu">
+      <button mat-menu-item class="clickable" [routerLink]="['/account/properties']">Option 1</button>
+      <button mat-menu-item class="clickable" [routerLink]="['/account/alerts']">Option 2</button>
+      <button mat-menu-item [routerLink]="['/acct/myaccount']">Account Settings</button>
+      <button mat-menu-item class="clickable" (click)="logout()">Logout</button>
+    </mat-menu>
+    <mat-menu #menu="matMenu" [overlapTrigger]="false">
+      <button mat-menu-item [routerLink]="['/acct/myaccount']">Account Settings</button>
+      <button mat-menu-item (click)="logout();acctClick();">Logout</button>
+    </mat-menu>
   </div>
 </div>

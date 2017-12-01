@@ -1,8 +1,10 @@
 
 img {
   margin: 5px 5px 5px 15px;
-  max-height: 90%;
-  width: 40px;
+  width: 100%;
+}
+.logo {
+  max-width: 50px;
 }
 button {
   height: 100%;
