@@ -1,34 +1,29 @@
-<div fxFlexFill fxLayout="column" class="full-height" fxLayoutAlign="center center">
-  <div fxFlex=10 class="full-width" fxFlexLayout="column">
-    <nav class="full-width" mat-tab-nav-bar color="primary">
-      <a mat-tab-link [routerLink]="['/acct/login']">Login</a>
-      <a mat-tab-link active="true">Register</a>
-    </nav>
-  </div>
-  <div fxFlex=80 class="full-width pad-sides text-center">
-    <form class="full-width" fxLayout="column" fxLayoutAlign="center center" [formGroup]="registerForm" (ngSubmit)="register()">
-      <h1 fxFlex=10 class="full-width">
+<div fxLayout="column" fxLayoutAlign="center center" class="text-center">
+  <nav class="full-width" mat-tab-nav-bar color="primary">
+    <a mat-tab-link [routerLink]="['/acct/login']">Login</a>
+    <a mat-tab-link active="true">Register</a>
+  </nav>
+  <form class="full-width" fxLayout="column" fxLayoutAlign="center center" [formGroup]="registerForm" (ngSubmit)="register()">
+    <h1 fxFlex=10 class="full-width">
+      Register
+    </h1>
+    <div class="pad-bot" fxFlex=90 fxLayout="column" fxLayoutAlign="start center">
+      <mat-input-container [ngClass]="setClassUsername()">
+        <input matInput type="text" name="username" formControlName="username" placeholder="Username" autofocus>
+      </mat-input-container>
+      <mat-input-container [ngClass]="setClassEmail()">
+        <input matInput type="email" name="email" formControlName="email" placeholder="Email">
+      </mat-input-container>
+      <mat-input-container [ngClass]="setClassPassword()">
+        <input matInput type="password" name="password" formControlName="password" placeholder="Password">
+      </mat-input-container>
+      <div class="pad"></div>
+      <button mat-raised-button color="primary" class="btn-reg" type="submit" [disabled]="!registerForm.valid">
         Register
-      </h1>
-      <div class="pad-bot" fxFlex=90 fxLayout="column" fxLayoutAlign="start center">
-        <mat-input-container [ngClass]="setClassUsername()">
-          <input matInput type="text" name="username" formControlName="username" placeholder="Username" autofocus>
-        </mat-input-container>
-        <mat-input-container [ngClass]="setClassEmail()">
-          <input matInput type="email" name="email" formControlName="email" placeholder="Email">
-        </mat-input-container>
-        <mat-input-container [ngClass]="setClassPassword()">
-          <input matInput type="password" name="password" formControlName="password" placeholder="Password">
-        </mat-input-container>
-        <div class="pad"></div>
-        <button mat-raised-button color="primary" class="btn-reg" type="submit" [disabled]="!registerForm.valid">
-          Register
-        </button>
-      </div>
-      <span class="width-80" fxFlex=90 fxLayout="column" fxLayoutAlign="start center">
-        Already have an account? <a [routerLink]="['/acct/login']"> Login here.</a>
-      </span>
-    </form>
-  </div>
-  <div fxFlex=10></div>
+      </button>
+    </div>
+    <span class="width-80" fxFlex=90 fxLayout="column" fxLayoutAlign="start center">
+      Already have an account? <a [routerLink]="['/acct/login']"> Login here.</a>
+    </span>
+  </form>
 </div>

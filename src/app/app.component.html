@@ -3,7 +3,10 @@
     <app-top-nav></app-top-nav>
 
     <!-- Body -->
-    <router-outlet fxFlex></router-outlet>
+    <div fxFlex>
+        <app-chart fxFlexFill></app-chart>
+        <router-outlet fxFlexFill></router-outlet>
+    </div>
 
     <!-- Footer -->
     <app-footer></app-footer>

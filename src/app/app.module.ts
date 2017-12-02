@@ -1,22 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import 'hammerjs';
 import { SharedModule } from './shared/shared.module';
-import { RoutingModule } from './routing.module';
+import { RoutingModule, EmptyComponent } from './routing.module';
 
 import { AppComponent } from './app.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AcctService } from './services/acct/acct.service';
+import { ChartService } from './services/chart/chart.service';
+import { ChartHttpService } from './services/chart/chart-http.service';
 import { LoggedInGuard } from './guards/logged-in.guard';
 import { LoggedOutGuard } from './guards/logged-out.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
+    EmptyComponent,
     TopNavComponent,
     FooterComponent,
     PageNotFoundComponent
@@ -25,10 +28,10 @@ import { LoggedOutGuard } from './guards/logged-out.guard';
     BrowserModule,
     BrowserAnimationsModule,
     SharedModule,
-    HttpModule,
+    HttpClientModule,
     RoutingModule
   ],
-  providers: [AcctService, LoggedInGuard, LoggedOutGuard],
+  providers: [AcctService, ChartService, ChartHttpService, LoggedInGuard, LoggedOutGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

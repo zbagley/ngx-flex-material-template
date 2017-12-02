@@ -1,30 +1,25 @@
-<div fxFlexFill fxLayout="column" class="full-height" fxLayoutAlign="center center">
-  <div fxFlex=10 class="full-width" fxFlexLayout="column">
-    <nav class="full-width" mat-tab-nav-bar>
-      <a mat-tab-link active="true">Login</a>
-      <a mat-tab-link [routerLink]="['/acct/register']">Register</a>
-    </nav>
-  </div>
-  <div fxFlex=80 class="full-width pad-sides text-center">
-    <form class="full-width" fxLayout="column" fxLayoutAlign="center center" [formGroup]="loginForm" (ngSubmit)="login()">
-      <h1 class="width-80" fxFlex=10>
+<div fxLayout="column" fxLayoutAlign="center center" class="text-center">
+  <nav class="full-width" mat-tab-nav-bar>
+    <a mat-tab-link active="true">Login</a>
+    <a mat-tab-link [routerLink]="['/acct/register']">Register</a>
+  </nav>
+  <form class="full-width" fxLayout="column" fxLayoutAlign="center center" [formGroup]="loginForm" (ngSubmit)="login()">
+    <h1 class="width-80" fxFlex=10>
+      Login
+    </h1>
+    <div class="width-80 pad-bot" fxFlex=90 fxLayout="column" fxLayoutAlign="start center">
+      <mat-input-container [ngClass]="setClassEmail()">
+        <input matInput type="email" name="email" formControlName="email" placeholder="Email" autofocus>
+      </mat-input-container>
+      <mat-input-container [ngClass]="setClassPassword()">
+        <input matInput type="password" name="password" formControlName="password" placeholder="Password">
+      </mat-input-container>
+      <button mat-raised-button color="primary" class="btn-reg" type="submit" [disabled]="!loginForm.valid">
         Login
-      </h1>
-      <div class="width-80 pad-bot" fxFlex=90 fxLayout="column" fxLayoutAlign="start center">
-        <mat-input-container [ngClass]="setClassEmail()">
-          <input matInput type="email" name="email" formControlName="email" placeholder="Email" autofocus>
-        </mat-input-container>
-        <mat-input-container [ngClass]="setClassPassword()">
-          <input matInput type="password" name="password" formControlName="password" placeholder="Password">
-        </mat-input-container>
-        <button mat-raised-button color="primary" class="btn-reg" type="submit" [disabled]="!loginForm.valid">
-          Login
-        </button>
-      </div>
-      <span class="width-80" fxFlex=90 fxLayout="column" fxLayoutAlign="start center">
-        Don't have an account yet? <a [routerLink]="['/acct/register']"> Register here.</a> It's free!
-      </span>
-    </form>
-  </div>
-  <div fxFlex=10></div>
+      </button>
+    </div>
+    <span class="width-80" fxFlex=90 fxLayout="column" fxLayoutAlign="start center">
+      Don't have an account yet? <a [routerLink]="['/acct/register']"> Register here.</a> It's free!
+    </span>
+  </form>
 </div>

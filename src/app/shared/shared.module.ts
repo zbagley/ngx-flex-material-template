@@ -11,6 +11,7 @@ import {
   MatTabsModule,
   MatToolbarModule
 } from '@angular/material';
+import { ChartComponent } from '../chart/chart.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,11 @@ import {
     MatTabsModule,
     MatToolbarModule
   ],
+  declarations: [
+    ChartComponent,
+  ],
   exports: [
+    ChartComponent,
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,

@@ -1,5 +1,5 @@
 {
-  "name": "Angular: Flex Layout + Material Template",
+  "name": "ngx-flex-material-template",
   "version": "1.0.1",
   "license": "MIT",
   "scripts": {
@@ -27,6 +27,8 @@
     "@angular/router": "^5.0.3",
     "core-js": "^2.4.1",
     "hammerjs": "^2.0.8",
+    "highcharts": "^5.0.14",
+    "highcharts-more": "^0.1.2",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
   },
@@ -38,7 +40,6 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "^6.0.92",
     "codelyzer": "~3.1.1",
-    "concurrently": "^3.5.1",
     "font-awesome": "^4.7.0",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",

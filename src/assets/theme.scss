@@ -8,12 +8,9 @@ $my-theme: mat-light-theme($my-primary, $my-accent);
 
 @include angular-material-theme($my-theme);
 
-.footer {
+app-footer {
 	background-color: mat-color($mat-blue-grey, 200);
 }
 app-top-nav {
-	background-color: mat-color($mat-teal, 300);
-}
-.circle {
 	background-color: mat-color($mat-teal, 300);
 }

@@ -1,14 +1,14 @@
-<div fxFlexFill fxLayout="row" fxLayoutAlign="center center" class="footer">
-  <div fxFlex="33" fxLayoutAlign="start center" class="foot-1">
+<div fxFlexFill fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutAlign="center stretch" class="footer">
+  <div fxFlex.lt-md="33" fxFlex.gt-sm="25" fxLayoutAlign="center center">
     <i class="fa fa-twitter-square fa-2x clickable" aria-hidden="true" (click)="openTwitter();"></i>&nbsp;&nbsp;
     <i class="fa fa-linkedin-square fa-2x clickable" aria-hidden="true" (click)="openLinkedIn();"></i>&nbsp;&nbsp;
     <i class="fa fa-terminal fa-2x clickable" aria-hidden="true" (click)="openBlog();"></i>
   </div>
-  <div fxFlex="33" fxLayoutAlign="center center" class="foot-2">
+  <div fxFlex.lt-md="33" fxFlex.gt-sm="25" fxLayoutAlign="center center">
     <a href="#">Privacy Notice</a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#">Conditions of Use</a>
   </div>
-  <div fxFlex="33" fxLayoutAlign="end center" class="foot-3">
+  <div fxFlex.lt-md="33" fxFlex.gt-sm="25" fxLayoutAlign="center center">
     Logo Image © 2017 Data Standards Limited
   </div>
 </div>

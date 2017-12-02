@@ -1,4 +1,4 @@
 img {
-  width: auto;
-  height: calc(100% - 10px);
+  max-width: 100%;
+  max-height: 100%;
 }
