@@ -1,13 +1,13 @@
-<div fxFlexFill fxLayout="column" fxLayoutAlign="start stretch">
+<div fxLayout="column">
     <!-- Top Nav -->
-    <app-top-nav></app-top-nav>
+    <app-top-nav id="topNav"></app-top-nav>
 
     <!-- Body -->
-    <div fxFlex>
-        <app-chart fxFlexFill></app-chart>
-        <router-outlet fxFlexFill></router-outlet>
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <app-chart [chartHeight]="chartHeight" [chartWidth]="chartWidth" [chartApi]="chartApi" [ngStyle]="{display:(chartHidden)?'none':''}"></app-chart>
+        <router-outlet></router-outlet>
     </div>
 
     <!-- Footer -->
-    <app-footer></app-footer>
+    <app-footer id="footer"></app-footer>
 </div>

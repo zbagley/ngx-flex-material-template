@@ -1,8 +1,5 @@
-import { Component, OnChanges, SimpleChanges, Input } from '@angular/core';
-import { ChartApiModel } from '../services/chart/model/chart-api.model';
-import { ChartService } from '../services/chart/chart.service';
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
+import { Component, OnChanges, OnDestroy, SimpleChanges, Input } from '@angular/core';
+import { ChartApiModel } from './chart-api.model';
 
 // HIGHCHARTS
 import * as Highcharts from 'highcharts';
@@ -21,21 +18,32 @@ let chartHolder;
   styleUrls: ['./chart.component.css']
 })
 export class ChartComponent implements OnChanges {
+  activeMediaQuery = '';
   @Input() chartApi;
+  @Input() chartWidth;
+  @Input() chartHeight;
   loaded = false;
 
-  constructor(
-    private chartService: ChartService
-    ) { }
+  constructor() { }
 
   ngOnChanges(changes: SimpleChanges) {
-    if ( changes.chartApi.currentValue.chart ) {
-      const newOptions: ChartApiModel = JSON.parse(JSON.stringify(changes.chartApi.currentValue));
+    if ( changes.chartApi && changes.chartApi.currentValue.chart ) {
+      let newOptions: ChartApiModel = JSON.parse(JSON.stringify(changes.chartApi.currentValue));
       if ( !this.loaded ) { chartHolder = Highcharts.chart('container', newOptions); } else {
         chartHolder.update(newOptions);
       }
-    } else {
-      this.loaded = false;
     }
+    if ( this.chartApi && changes.chartWidth ) {
+      chartHolder.setSize(changes.chartWidth.currentValue, undefined);
+    }
+    if ( this.chartApi && changes.chartHeight ) {
+      chartHolder.setSize(undefined, changes.chartHeight.currentValue);
+    }
+    this.resizeFix();
+  }
+
+  resizeFix() {
+    const fix = setInterval( () => { window.dispatchEvent(new Event('resize')) }, 300 );
+    setTimeout( () => clearInterval(fix), 1500);
   }
 }
