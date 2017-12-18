@@ -3,19 +3,18 @@
 ## [View Live Demo](https://demo.datastandards.limited/)
 
 A mobile-first template with packages implemented from:
-- [Angular CLI](https://github.com/angular/angular-cli) version 1.3.1.
+- [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.
 - [Angular Flex-Layout](https://github.com/angular/flex-layout)
 - [Angular Material](https://material.angular.io)
-- [Font Awesome](http://fontawesome.io/)
-- Unit and e2e testing with [Karma](https://karma-runner.github.io) & [Jasmine](https://jasmine.github.io/)
+- WIP: Unit and e2e testing with [Karma](https://karma-runner.github.io) & [Jasmine](https://jasmine.github.io/)
 
 And features including:
 - A mobile-first responsive UI
 - Dynamic animations
-- Collapsable side navigation with 2nd level local navigation
+- [Highcharts](https://www.highcharts.com/demo)
 - A shared module for easy imports/exports
 - Clean and user friendly routing
-- Implementation placeholders for auth service, including guards (my preferred auth package (Angular 2/4) is [angular2-jwt](https://github.com/auth0/angular2-jwt))
+- Implementation placeholders for auth service, including guards (my preferred auth package (Angular 2+, compatible with this version) is [angular2-jwt](https://github.com/auth0/angular2-jwt))
 
 # Please share and enjoy!
 

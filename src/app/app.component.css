@@ -1,37 +1,26 @@
-.circle-closed {
-    opacity: 0.25;
-  left: -1em;
+.fab-nav {
+  opacity: 0.5;
+  top: 50%;
+  position: fixed;
     -webkit-transition: all 0.5s linear;
        -moz-transition: all 0.5s linear;
         -ms-transition: all 0.5s linear;
          -o-transition: all 0.5s linear;
             transition: all 0.5s linear;    
 }
-.circle-closed:hover {
-    opacity: 1;
-    -webkit-transition: all 0.5s linear;
-       -moz-transition: all 0.5s linear;
-        -ms-transition: all 0.5s linear;
-         -o-transition: all 0.5s linear;
-            transition: all 0.5s linear;
+.fab-nav-left {
+  left: 15px;
 }
-
-.side-nav-closed {
-  width: 0px;
-    -webkit-transition: all 0.25s linear;
-       -moz-transition: all 0.25s linear;
-        -ms-transition: all 0.25s linear;
-         -o-transition: all 0.25s linear;
-            transition: all 0.25s linear;
+.fab-nav-right {
+  right: 15px;
 }
-
-.side-nav-open {
-  width: 250px;
-    -webkit-transition: all 0.25s linear;
-       -moz-transition: all 0.25s linear;
-        -ms-transition: all 0.25s linear;
-         -o-transition: all 0.25s linear;
-            transition: all 0.25s linear;
+.fab-nav:hover {
+  opacity: 1;
+  -webkit-transition: all 0.5s linear;
+     -moz-transition: all 0.5s linear;
+      -ms-transition: all 0.5s linear;
+       -o-transition: all 0.5s linear;
+          transition: all 0.5s linear;
 }
 
 .padded {

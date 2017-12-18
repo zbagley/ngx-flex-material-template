@@ -1,5 +1,5 @@
-import { ChartApiModel } from './chart-api.model';
-import { Double } from './series-data.model';
+import { ChartApiModel } from '../model/chart-api.model';
+import { Double } from '../model/series-data.model';
 const initData = [
   new Double,
   new Double,
@@ -38,14 +38,14 @@ initData[8].x = 8;
 initData[9].x = 9;
 initData[10].x = 10;
 initData[11].x = 11;
-export const ChartDefault: ChartApiModel = {
+export const ChartDefault2: ChartApiModel = {
   chart: {
     backgroundColor: null,
     style: {
-      color: '#000',
+      color: '#000'
     },
-    width: '600',
-    height: '400'
+    width: '',
+    height: ''
   },
   colors: {
 
@@ -71,13 +71,22 @@ export const ChartDefault: ChartApiModel = {
   series: [{
       data: initData,
       type: 'line',
-      name: 'Default Series'
-  }],
+      name: 'Default Series 2 - 1'
+  }, {
+      data: initData,
+      type: 'bar',
+      name: 'Default Series 2 - 2'
+  }, {
+      data: initData,
+      type: 'line',
+      name: 'Default Series 2 - 3'
+  },
+  ],
   subtitle: {
 
   },
   title: {
-    text: 'Default Title',
+    text: 'Default Title 2',
     style: {
       color: '#000'
     }
@@ -85,7 +94,7 @@ export const ChartDefault: ChartApiModel = {
   tooltip: {
 
   },
-  xAxis: [{
+  xAxis: {
     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
         'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     labels: {
@@ -98,8 +107,8 @@ export const ChartDefault: ChartApiModel = {
         color: '#000'
       }
     }
-  }],
-  yAxis: [{
+  },
+  yAxis: {
     labels: {
       style: {
         color: '#000'
@@ -110,8 +119,8 @@ export const ChartDefault: ChartApiModel = {
         color: '#000'
       }
     }
-  }],
-  zAxis: [{
+  },
+  zAxis: {
 
-  }]
+  }
 }

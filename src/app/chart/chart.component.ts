@@ -1,5 +1,5 @@
 import { Component, OnChanges, OnDestroy, SimpleChanges, Input } from '@angular/core';
-import { ChartApiModel } from './chart-api.model';
+import { ChartApiModel } from './model/chart-api.model';
 
 // HIGHCHARTS
 import * as Highcharts from 'highcharts';
@@ -22,16 +22,15 @@ export class ChartComponent implements OnChanges {
   @Input() chartApi;
   @Input() chartWidth;
   @Input() chartHeight;
-  loaded = false;
 
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges) {
-    if ( changes.chartApi && changes.chartApi.currentValue.chart ) {
+    if ( changes.chartApi && changes.chartApi.currentValue && changes.chartApi.currentValue.chart ) {
       let newOptions: ChartApiModel = JSON.parse(JSON.stringify(changes.chartApi.currentValue));
-      if ( !this.loaded ) { chartHolder = Highcharts.chart('container', newOptions); } else {
-        chartHolder.update(newOptions);
-      }
+      newOptions.chart.height = this.chartHeight;
+      newOptions.chart.width = this.chartWidth;
+      chartHolder = Highcharts.chart('container', newOptions);
     }
     if ( this.chartApi && changes.chartWidth ) {
       chartHolder.setSize(changes.chartWidth.currentValue, undefined);
