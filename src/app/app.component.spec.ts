@@ -5,13 +5,12 @@ import { AcctService } from './services/acct/acct.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 import { TopNavComponent } from './top-nav/top-nav.component';
-import { SideNavComponent } from './side-nav/side-nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { AppComponent } from './app.component';
 
-describe('LoginComponent', () => {
+describe('AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
 
@@ -20,7 +19,6 @@ describe('LoginComponent', () => {
       declarations: [
         AppComponent,
         TopNavComponent,
-        SideNavComponent,
         FooterComponent,
         PageNotFoundComponent
       ],

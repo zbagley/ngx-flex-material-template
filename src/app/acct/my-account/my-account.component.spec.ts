@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { SharedModule } from '../../shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MyAccountComponent } from './my-account.component';
 
@@ -8,7 +10,8 @@ describe('MyAccountComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MyAccountComponent ]
+      declarations: [ MyAccountComponent ],
+      imports: [ SharedModule, BrowserAnimationsModule ]
     })
     .compileComponents();
   }));
