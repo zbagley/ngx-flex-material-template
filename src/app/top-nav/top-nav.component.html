@@ -4,11 +4,11 @@
     <div class="logo clickable" [routerLink]="['/']"><img src="/assets/ms-icon-310x310.png"></div>
     <h1 class="pad-sides clickable" [routerLink]="['/']">DSLimited</h1>
     <div fxFlex></div>
-    <div class="clickable" [routerLink]="['/acct/myaccount']" fxHide.lt-md><h3><u>Option 1</u></h3></div>
+    <div class="clickable" [routerLink]="['/option1']" fxHide.lt-md><h3><u>Option 1</u></h3></div>
     <div fxFlex="20px" fxHide.lt-md></div>
-    <div class="clickable" [routerLink]="['/acct/myaccount']" fxHide.lt-md><h3><u>Option 2</u></h3></div>
+    <div class="clickable" [routerLink]="['/option2']" fxHide.lt-md><h3><u>Option 2</u></h3></div>
     <div fxFlex="20px" fxHide.lt-md></div>
-    <div class="clickable" [routerLink]="['/acct/myaccount']" fxHide.lt-md><h3><u>Option 3</u></h3></div>
+    <div class="clickable" [routerLink]="['/option3']" fxHide.lt-md><h3><u>Option 3</u></h3></div>
     <div fxFlex="20px" fxHide.lt-md></div>
     <div fxFlex fxHide.lt-md></div>
     <div class="clickable" [routerLink]="['/acct/login']" fxHide.lt-md *ngIf="!isLoggedIn()"><h3><u>Login / Register</u></h3></div>
@@ -16,8 +16,9 @@
     <div [matMenuTriggerFor]="mobileMenu" fxHide.gt-sm><h3><mat-icon class="pad clickable">menu</mat-icon></h3></div>
     <div fxFlex.lt-md=5 fxFlex.gt-sm="20px"></div>
     <mat-menu #mobileMenu="matMenu">
-      <button mat-menu-item class="clickable" [routerLink]="['/account/properties']">Option 1</button>
-      <button mat-menu-item class="clickable" [routerLink]="['/account/alerts']">Option 2</button>
+      <button mat-menu-item class="clickable" [routerLink]="['/option1']">Option 1</button>
+      <button mat-menu-item class="clickable" [routerLink]="['/option2']">Option 2</button>
+      <button mat-menu-item class="clickable" [routerLink]="['/option3']">Option 3</button>
       <button mat-menu-item *ngIf="!isLoggedIn()" class="clickable" [routerLink]="['/acct/login']">Login / Register</button>
       <button mat-menu-item *ngIf="isLoggedIn()" [routerLink]="['/acct/myaccount']">Account Settings</button>
       <button mat-menu-item *ngIf="isLoggedIn()" class="clickable" (click)="logout()">Logout</button>
