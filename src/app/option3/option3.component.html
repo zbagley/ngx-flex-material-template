@@ -1,14 +1,18 @@
-<div fxFlexFill fxLayout="column" class="full-height" fxLayoutAlign="center center">
-  <div class="full-width bordered" fxFlexLayout="column">
+  <div class="bordered" fxLayout="column">
       <div fxLayoutWrap fxLayout="row" class="full-width" *ngIf="order">
-        <mat-toolbar class="border-full" color="primary" fxFlex.gt-sm="250px" fxFlex.lt-md=100 [routerLink]="['/option3']">
-          <mat-icon>home</mat-icon>
-          <span style="flex: 1 1 auto;"></span>
-          <span>Animals</span>
+        <mat-toolbar class="border-full" color="" fxFlex.gt-sm="250px" fxFlex.lt-md=100 [routerLink]="['/option3']">
+          <span class="full-width" *ngIf="currentFamily === -1">
+            <mat-select [ngModel]="'Animalia'" placeholder="current order" floatPlaceholder="always" class="full-width">
+              <mat-option value="Animalia">
+                <span>Animalia</span>
+              </mat-option>
+            </mat-select>
+          </span>
+          <span *ngIf="currentFamily !== -1" class="full-width clickable">Order: Animalia</span>
         </mat-toolbar>
         <mat-toolbar *ngIf="currentFamily !== -1" class="border-full" color="" fxFlex.gt-sm="250px" fxFlex.lt-md=100>
           <span *ngIf="currentGenus === -1" class="full-width">
-            <mat-select panelClass="width-80" placeholder="current family" floatPlaceholder="always" class="full-width" [ngModel]="currentFamily" (ngModelChange)="currentFamily=$event;loadRoute('family');">
+            <mat-select placeholder="current family" floatPlaceholder="always" class="full-width" [ngModel]="currentFamily" (ngModelChange)="currentFamily=$event;loadRoute('family');">
               <mat-option *ngFor="let fam of order.family; let i = index;" [value]="i">
                 {{fam.id}}
               </mat-option>
@@ -48,11 +52,10 @@
         </mat-toolbar>
       </div>
   </div>
-  <div fxFlex=90 fxLayout="column" class="pad-sides text-center">
-    <div fxFlex fxLayout="column" fxLayoutAlign="start center" class="full-width">
+  <div fxLayout="column" class="pad-sides text-center">
+    <div fxLayout="column" fxLayoutAlign="start center" class="full-width">
       <app-item1 class="full-width" *ngIf="currentGenus === -1 && currentFamily !== -1" [family]="order.family[currentFamily]"></app-item1>
       <app-item2 class="full-width" *ngIf="currentSpecies === -1 && currentGenus !== -1" [family]="order.family[currentFamily]" [genus]="order.family[currentFamily].genus[currentGenus]"></app-item2>
       <app-item3 class="full-width" *ngIf="currentSpecies !== -1" [family]="order.family[currentFamily]" [genus]="order.family[currentFamily].genus[currentGenus]" [species]="order.family[currentFamily].genus[currentGenus].species[currentSpecies]"></app-item3>
     </div>
   </div>
-</div>

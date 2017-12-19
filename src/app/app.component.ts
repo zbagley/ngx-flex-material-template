@@ -84,6 +84,7 @@ export class AppComponent implements OnDestroy {
   setSmallSize() {
     this.chartHeight = window.innerHeight.toFixed();
     this.chartWidth = window.innerWidth.toFixed();
+    console.log(this.chartHeight)
   }
 
   setLargeSize() {
@@ -113,6 +114,7 @@ export class AppComponent implements OnDestroy {
     if (!(document.getElementById('topNav') && document.getElementById('footer'))) {
       setTimeout( () => this.setLargeSize(), 500);
     }
+    console.log(this.chartHeight)
   }
 
 }

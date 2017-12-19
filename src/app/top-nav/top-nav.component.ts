@@ -14,14 +14,6 @@ export class TopNavComponent {
     private router: Router,
     private acctService: AcctService) { }
 
-  acctClick() {
-    this.router.navigate(['/acct/login']);
-  }
-
-  homeClick() {
-    this.router.navigate(['/home']);
-  }
-
   logout() {
     this.acctService.logout();
   }

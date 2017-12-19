@@ -14,3 +14,6 @@ app-footer {
 app-top-nav {
 	background-color: mat-color($mat-teal, 300);
 }
+.current-route {
+  border-bottom: 2px mat-color($mat-blue-grey, 200) solid;
+}
