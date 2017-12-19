@@ -46,10 +46,11 @@
           <ng-container *ngIf="currentGenus === -1 && currentFamily !== -1">Genus</ng-container>
           <ng-container *ngIf="currentGenus !== -1">Species</ng-container>
         </h3>
-
-        <mat-toolbar class="border-full clickable set-width" [ngStyle]="{'background-color': colors[i] }" fxFlex="50px" *ngFor="let menuItem of currentSubmenu; let i = index;" (click)="setItem(menuItem);">
-          {{menuItem}}
-        </mat-toolbar>
+        <div fxLayout.lt-md="column" fxLayout.gt-sm="row">
+          <mat-toolbar fxFlex.gt-sm="250px" fxFlex.lt-md=100 class="border-full clickable set-width" [ngStyle]="{'background-color': colors[i] }" fxFlex="50px" *ngFor="let menuItem of currentSubmenu; let i = index;" (click)="setItem(menuItem);">
+            {{menuItem}}
+          </mat-toolbar>
+        </div>
       </div>
   </div>
   <div fxLayout="column" class="pad-sides text-center">

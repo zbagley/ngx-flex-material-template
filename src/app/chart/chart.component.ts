@@ -9,7 +9,7 @@ require('highcharts/modules/solid-gauge')(Highcharts);
 require('highcharts/modules/heatmap')(Highcharts);
 require('highcharts/modules/treemap')(Highcharts);
 require('highcharts/modules/funnel')(Highcharts);
-Highcharts.setOptions({ lang: { thousandsSep: ','} })
+Highcharts.setOptions({ lang: { thousandsSep: ','} });
 let chartHolder;
 
 @Component({
@@ -27,7 +27,7 @@ export class ChartComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if ( changes.chartApi && changes.chartApi.currentValue && changes.chartApi.currentValue.chart ) {
-      let newOptions: ChartApiModel = JSON.parse(JSON.stringify(changes.chartApi.currentValue));
+      const newOptions: ChartApiModel = JSON.parse(JSON.stringify(changes.chartApi.currentValue));
       newOptions.chart.height = this.chartHeight;
       newOptions.chart.width = this.chartWidth;
       chartHolder = Highcharts.chart('container', newOptions);
@@ -42,7 +42,7 @@ export class ChartComponent implements OnChanges {
   }
 
   resizeFix() {
-    const fix = setInterval( () => { window.dispatchEvent(new Event('resize')) }, 300 );
+    const fix = setInterval( () => { window.dispatchEvent(new Event('resize')); }, 300 );
     setTimeout( () => clearInterval(fix), 1500);
   }
 }

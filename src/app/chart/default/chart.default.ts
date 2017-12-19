@@ -13,7 +13,7 @@ const initData = [
   new Double,
   new Double,
   new Double
-]
+];
 initData[0].name = 'Jan';
 initData[1].name = 'Feb';
 initData[2].name = 'Mar';
@@ -114,4 +114,4 @@ export const ChartDefault: ChartApiModel = {
   zAxis: [{
 
   }]
-}
+};

@@ -5,11 +5,11 @@ export class Single {
 }
 
 export class Double extends Single {
-  x = 0
+  x = 0;
 }
 
 export class Range {
-  x = 0
+  x = 0;
   low = Math.round(Math.random() * 1000 / 10);
   high = Math.round(Math.random() * 1000 / 10);
   name = 'item ';

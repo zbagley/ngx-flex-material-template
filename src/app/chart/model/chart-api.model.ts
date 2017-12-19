@@ -4,11 +4,11 @@ export class ChartApiModel {
     style: any;
     height: any;
     width: any;
-  }
+  };
   colors: any;
   credits: {
     enabled: false;
-  }
+  };
   data: any;
   exporting: any;
   labels: any;

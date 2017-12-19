@@ -11,8 +11,6 @@ import { TopNavComponent } from './top-nav/top-nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AcctService } from './services/acct/acct.service';
-import { ChartService } from './services/chart/chart.service';
-import { ChartHttpService } from './services/chart/chart-http.service';
 import { LoggedInGuard } from './guards/logged-in.guard';
 import { LoggedOutGuard } from './guards/logged-out.guard';
 
@@ -31,7 +29,7 @@ import { LoggedOutGuard } from './guards/logged-out.guard';
     HttpClientModule,
     RoutingModule
   ],
-  providers: [AcctService, ChartService, ChartHttpService, LoggedInGuard, LoggedOutGuard],
+  providers: [AcctService, LoggedInGuard, LoggedOutGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,7 +3,7 @@ import { Router, Event, NavigationStart } from '@angular/router';
 import { MediaChange, ObservableMedia } from '@angular/flex-layout';
 import { Subscription } from 'rxjs/Subscription';
 
-//default chart data
+// default chart data
 import {
   ChartDefault,
   ChartDefault2,
@@ -18,7 +18,7 @@ import {
   styleUrls: ['./app.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class AppComponent implements OnDestroy {
+export class AppComponent implements OnInit, OnDestroy {
   watcher: Subscription;
   chartHidden = true;
   chartList = [ChartDefault, ChartDefault2, ChartDefault3, ChartDefault4];
@@ -59,7 +59,7 @@ export class AppComponent implements OnDestroy {
     if (index === 0 && n === -1) {
       this.chartApi = this.chartList[this.chartList.length - 1];
     } else if (index === this.chartList.length - 1 && n === 1) {
-      this.chartApi = this.chartList[0]
+      this.chartApi = this.chartList[0];
     } else {
       this.chartApi = this.chartList[index + n];
     }
@@ -68,13 +68,13 @@ export class AppComponent implements OnDestroy {
   ngOnInit() {
     this.router.events.subscribe( (e) => {
       if (e instanceof NavigationStart) {
-      	if (e.url === "/") {
-      		this.chartHidden = false;
-      	} else {
-      	    this.chartHidden = true;
-      	}
+        if (e.url === '/') {
+          this.chartHidden = false;
+        } else {
+            this.chartHidden = true;
+        }
       }
-    })
+    });
   }
 
   ngOnDestroy() {
@@ -84,11 +84,10 @@ export class AppComponent implements OnDestroy {
   setSmallSize() {
     this.chartHeight = window.innerHeight.toFixed();
     this.chartWidth = window.innerWidth.toFixed();
-    console.log(this.chartHeight)
   }
 
   setLargeSize() {
-    if( window.innerHeight.toFixed() > window.innerWidth.toFixed() ) {
+    if ( window.innerHeight.toFixed() > window.innerWidth.toFixed() ) {
       this.chartHeight = (document.getElementById('topNav') && document.getElementById('footer')) ?
         (
           window.innerHeight -
@@ -97,7 +96,7 @@ export class AppComponent implements OnDestroy {
             +
             document.getElementById('footer').offsetHeight
           )
-        ).toFixed(): '400';
+        ).toFixed() : '400';
       this.chartWidth = window.innerWidth.toFixed();
     } else {
       this.chartHeight = (document.getElementById('topNav') && document.getElementById('footer')) ?
@@ -108,13 +107,12 @@ export class AppComponent implements OnDestroy {
             +
             document.getElementById('footer').offsetHeight
           )
-        ).toFixed(): '400';
+        ).toFixed() : '400';
       this.chartWidth = window.innerHeight.toFixed();
     }
     if (!(document.getElementById('topNav') && document.getElementById('footer'))) {
       setTimeout( () => this.setLargeSize(), 500);
     }
-    console.log(this.chartHeight)
   }
 
 }
