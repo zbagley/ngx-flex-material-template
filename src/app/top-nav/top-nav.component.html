@@ -1,34 +1,84 @@
 <div fxLayout="column" class="full-width">
   <div fxLayout="row" fxLayoutAlign="center center">
     <div fxFlex="20px"></div>
-    <div class="logo clickable" [routerLink]="['/']"><img src="/assets/ms-icon-310x310.png"></div>
-    <h1 class="pad-sides clickable" [routerLink]="['/']">DSLimited</h1>
+    <div class="logo clickable" [routerLink]="['/']">
+      <img src="/assets/ms-icon-310x310.png">
+    </div>
+    <h1 class="pad-sides clickable" [routerLink]="['/']">
+      DSLimited
+    </h1>
     <div fxFlex></div>
-    <div class="clickable" [routerLink]="['/']" fxHide.lt-md><h3>Browse Charts</h3></div>
+
+    <!-- TOP NAVIGATION FOR LARGE DISPLAY -->
+    <div class="clickable" [routerLink]="['/']" fxHide.lt-md>
+      <h3>Browse Charts</h3>
+    </div>
     <div fxFlex="20px" fxHide.lt-md></div>
-    <div class="clickable" [routerLink]="['/option1']" fxHide.lt-md><h3>Home</h3></div>
+    <div class="clickable" [routerLink]="['/option1']" fxHide.lt-md>
+      <h3>Home</h3>
+    </div>
     <div fxFlex="20px" fxHide.lt-md></div>
-    <div class="clickable" [routerLink]="['/option2']" fxHide.lt-md><h3>Option 2</h3></div>
+    <div class="clickable" [routerLink]="['/option2']" fxHide.lt-md>
+      <h3>Option 2</h3>
+    </div>
     <div fxFlex="20px" fxHide.lt-md></div>
-    <div class="clickable" [routerLink]="['/option3']" fxHide.lt-md><h3>Browse Animals</h3></div>
+    <div class="clickable" [routerLink]="['/option3']" fxHide.lt-md>
+      <h3>Browse Animals</h3>
+    </div>
     <div fxFlex="20px" fxHide.lt-md></div>
     <div fxFlex fxHide.lt-md></div>
-    <div class="clickable" [routerLink]="['/acct/login']" fxHide.lt-md *ngIf="!isLoggedIn()"><h3>Login / Register</h3></div>
-    <div class="clickable" fxHide.lt-md *ngIf="isLoggedIn()" [matMenuTriggerFor]="menu"><h3><mat-icon>account_circle</mat-icon>{{ username }}<mat-icon>arrow_drop_down</mat-icon></h3></div>
-    <div [matMenuTriggerFor]="mobileMenu" fxHide.gt-sm><h3><mat-icon class="pad clickable">menu</mat-icon></h3></div>
+    <div class="clickable" [routerLink]="['/acct/login']" fxHide.lt-md *ngIf="!isLoggedIn()">
+      <h3>Login / Register</h3>
+    </div>
+    <div class="clickable" fxHide.lt-md *ngIf="isLoggedIn()" [matMenuTriggerFor]="menu">
+      <h3>
+        <mat-icon>account_circle</mat-icon>
+        {{ username }}
+        <mat-icon>arrow_drop_down</mat-icon>
+      </h3>
+    </div>
+    <!-- END TOP NAVIGATION FOR LARGE DISPLAY -->
+
+    <!-- COLLAPSE ICON FOR MOBILE -->
+    <div [matMenuTriggerFor]="mobileMenu" fxHide.gt-sm>
+      <h3><mat-icon class="pad clickable">menu</mat-icon></h3>
+    </div>
+    <!-- END MOBILE -->
+
     <div fxFlex.lt-md=5 fxFlex.gt-sm="20px"></div>
-    <mat-menu #mobileMenu="matMenu">
-      <button mat-menu-item class="clickable" [routerLink]="['/']">Browse Charts</button>
-      <button mat-menu-item class="clickable" [routerLink]="['/option1']">Home</button>
-      <button mat-menu-item class="clickable" [routerLink]="['/option2']">Option 2</button>
-      <button mat-menu-item class="clickable" [routerLink]="['/option3']">Browse Animals</button>
-      <button mat-menu-item *ngIf="!isLoggedIn()" class="clickable" [routerLink]="['/acct/login']">Login / Register</button>
-      <button mat-menu-item *ngIf="isLoggedIn()" [routerLink]="['/acct/myaccount']">Account Settings</button>
-      <button mat-menu-item *ngIf="isLoggedIn()" class="clickable" (click)="logout()">Logout</button>
-    </mat-menu>
-    <mat-menu #menu="matMenu" [overlapTrigger]="false">
-      <button mat-menu-item [routerLink]="['/acct/myaccount']">Account Settings</button>
-      <button mat-menu-item (click)="logout();acctClick();">Logout</button>
-    </mat-menu>
   </div>
 </div>
+
+<!-- COLLAPSE MENU FOR MOBILE -->
+<mat-menu #mobileMenu="matMenu">
+  <button mat-menu-item class="clickable" [routerLink]="['/']">
+    Browse Charts
+  </button>
+  <button mat-menu-item class="clickable" [routerLink]="['/option1']">
+    Home
+  </button>
+  <button mat-menu-item class="clickable" [routerLink]="['/option2']">
+    Option 2
+  </button>
+  <button mat-menu-item class="clickable" [routerLink]="['/option3']">
+    Browse Animals
+  </button>
+  <button mat-menu-item *ngIf="!isLoggedIn()" class="clickable" [routerLink]="['/acct/login']">
+    Login / Register
+  </button>
+  <button mat-menu-item *ngIf="isLoggedIn()" [routerLink]="['/acct/myaccount']">
+    Account Settings
+  </button>
+  <button mat-menu-item *ngIf="isLoggedIn()" class="clickable" (click)="logout()">
+    Logout
+  </button>
+</mat-menu>
+<!-- ACCOUNT MENU FOR LARGE DISPLAYS -->
+<mat-menu #menu="matMenu" [overlapTrigger]="false">
+  <button mat-menu-item [routerLink]="['/acct/myaccount']">
+    Account Settings
+  </button>
+  <button mat-menu-item (click)="logout();acctClick();">
+    Logout
+  </button>
+</mat-menu>
