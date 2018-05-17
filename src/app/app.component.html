@@ -4,9 +4,9 @@
 
     <!-- Body -->
     <div fxLayout="column" fxLayoutAlign="start center" [ngStyle]="{'min-height':chartHeight + 'px'}">
-        <app-chart [chartHeight]="chartHeight" [chartWidth]="chartWidth" [chartApi]="chartApi" [ngStyle]="{display:(chartHidden)?'none':''}"></app-chart>
-		<div class="fab-nav fab-nav-left" (click)="changeChart(-1)" [ngStyle]="{display:(chartHidden)?'none':''}"><button mat-fab color="primary"><mat-icon aria-label="left">chevron_left</mat-icon></button></div>
-		<div class="fab-nav fab-nav-right" (click)="changeChart(1)" [ngStyle]="{display:(chartHidden)?'none':''}"><button mat-fab color="primary"><mat-icon aria-label="right">chevron_right</mat-icon></button></div>
+        <app-chart [@chartState]="chartState" [chartHeight]="chartHeight" [chartWidth]="chartWidth" [chartApi]="chartApi" [ngStyle]="{display:(chartState === 'hidden')?'none':''}"></app-chart>
+		<div class="fab-nav fab-nav-left" (click)="changeChart(-1)" [ngStyle]="{display:(chartState === 'hidden')?'none':''}"><button mat-fab color="primary"><mat-icon aria-label="left">chevron_left</mat-icon></button></div>
+		<div class="fab-nav fab-nav-right" (click)="changeChart(1)" [ngStyle]="{display:(chartState === 'hidden')?'none':''}"><button mat-fab color="primary"><mat-icon aria-label="right">chevron_right</mat-icon></button></div>
         <router-outlet></router-outlet>
     </div>
 

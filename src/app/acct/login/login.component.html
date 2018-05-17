@@ -8,12 +8,12 @@
       Login
     </h1>
     <div class="width-80 pad-bot" fxFlex=90 fxLayout="column" fxLayoutAlign="start center">
-      <mat-input-container [ngClass]="setClassEmail()">
+      <mat-form-field [ngClass]="setClassEmail()">
         <input matInput type="email" name="email" formControlName="email" placeholder="Email" autofocus>
-      </mat-input-container>
-      <mat-input-container [ngClass]="setClassPassword()">
+      </mat-form-field>
+      <mat-form-field [ngClass]="setClassPassword()">
         <input matInput type="password" name="password" formControlName="password" placeholder="Password">
-      </mat-input-container>
+      </mat-form-field>
       <button mat-raised-button color="primary" class="btn-reg" type="submit" [disabled]="!loginForm.valid">
         Login
       </button>

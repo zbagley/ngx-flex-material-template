@@ -11,6 +11,7 @@ require('highcharts/modules/treemap')(Highcharts);
 require('highcharts/modules/funnel')(Highcharts);
 Highcharts.setOptions({ lang: { thousandsSep: ','} });
 let chartHolder;
+// END HIGHCHART IMPORTS
 
 @Component({
   selector: 'app-chart',

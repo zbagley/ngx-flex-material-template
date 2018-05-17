@@ -8,15 +8,15 @@
       Register
     </h1>
     <div class="pad-bot" fxFlex=90 fxLayout="column" fxLayoutAlign="start center">
-      <mat-input-container [ngClass]="setClassUsername()">
+      <mat-form-field [ngClass]="setClassUsername()">
         <input matInput type="text" name="username" formControlName="username" placeholder="Username" autofocus>
-      </mat-input-container>
-      <mat-input-container [ngClass]="setClassEmail()">
+      </mat-form-field>
+      <mat-form-field [ngClass]="setClassEmail()">
         <input matInput type="email" name="email" formControlName="email" placeholder="Email">
-      </mat-input-container>
-      <mat-input-container [ngClass]="setClassPassword()">
+      </mat-form-field>
+      <mat-form-field [ngClass]="setClassPassword()">
         <input matInput type="password" name="password" formControlName="password" placeholder="Password">
-      </mat-input-container>
+      </mat-form-field>
       <div class="pad"></div>
       <button mat-raised-button color="primary" class="btn-reg" type="submit" [disabled]="!registerForm.valid">
         Register

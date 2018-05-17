@@ -21,4 +21,8 @@ export class TopNavComponent {
   isLoggedIn(): boolean {
     return this.acctService.isLoggedIn();
   }
+
+  acctClick() {
+    this.router.navigate(['/acct']);
+  }
 }

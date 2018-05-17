@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AcctService } from '../services/acct/acct.service';
 import { Route, ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-option3',
